@@ -11,7 +11,18 @@
 <header class="topp">
   <h1>Kunnskapshub</h1>
   <p class="undertekst">Kunnskap og verktøy for deltakere i fagprogrammet</p>
+  <button class="innstillinger-knapp" id="innstillingerKnapp">⚙ API-nøkkel</button>
 </header>
+
+<section class="innstillinger" id="innstillingerPanel" style="display:none;">
+  <label for="apiNokkelInput">Mistral API-nøkkel</label>
+  <input type="password" id="apiNokkelInput" placeholder="Lim inn API-nøkkelen din her">
+  <div class="innstillinger-knapper">
+    <button id="lagreNokkelKnapp">Lagre</button>
+    <button id="slettNokkelKnapp">Slett nøkkel</button>
+  </div>
+  <p class="innstillinger-status" id="innstillingerStatus"></p>
+</section>
 
 <main>
 
