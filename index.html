@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="no">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kunnskapshub</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="topp">
+  <h1>Kunnskapshub</h1>
+  <p class="undertekst">Kunnskap og verktøy for deltakere i fagprogrammet</p>
+</header>
+
+<main>
+
+  <!-- De 4 hovedområdene -->
+  <section class="omrader" id="omrader">
+    <button class="omrade-kort" data-omrade="day2day">
+      <span class="omrade-ikon">📅</span>
+      <span class="omrade-tittel">Day2Day</span>
+    </button>
+    <button class="omrade-kort" data-omrade="brufaser">
+      <span class="omrade-ikon">🌉</span>
+      <span class="omrade-tittel">Brufaser</span>
+    </button>
+    <button class="omrade-kort" data-omrade="referanser">
+      <span class="omrade-ikon">📚</span>
+      <span class="omrade-tittel">Referanser</span>
+    </button>
+    <button class="omrade-kort" data-omrade="laering">
+      <span class="omrade-ikon">🧠</span>
+      <span class="omrade-tittel">Kunnskap om læring</span>
+    </button>
+  </section>
+
+  <!-- Artikkelvisning (vises når man klikker på et område) -->
+  <section class="artikkel-visning" id="artikkelVisning" style="display:none;">
+    <button class="tilbake-knapp" id="tilbakeKnapp">← Tilbake til dashboard</button>
+    <h2 id="artikkelOmradeTittel"></h2>
+    <div id="artikkelListe"></div>
+  </section>
+
+  <!-- Chatbot-seksjon -->
+  <section class="chat-seksjon" id="chatSeksjon">
+    <h2>Spør Kunnskapshub</h2>
+
+    <div class="foreslatte-sporsmal" id="foreslatteSporsmal">
+      <!-- 4 spørsmålsforslag fylles inn av app.js -->
+    </div>
+
+    <div class="chat-vindu" id="chatVindu">
+      <!-- Meldinger vises her -->
+    </div>
+
+    <div class="chat-inntasting">
+      <input type="text" id="chatInput" placeholder="Skriv et spørsmål...">
+      <button id="sendKnapp">Send</button>
+    </div>
+  </section>
+
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
