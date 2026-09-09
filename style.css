@@ -297,6 +297,7 @@ main {
   border-radius: 3px;
   font-size: 0.9rem;
   max-width: 85%;
+  white-space: pre-wrap;
 }
 
 .melding-bruker {
