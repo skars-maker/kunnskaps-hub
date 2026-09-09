@@ -218,13 +218,6 @@ function sendMelding() {
   sporMistral(melding, lasterId);
 }
 
-  leggTilMelding(melding, "bruker");
-  chatInput.value = "";
-  const lasterId = leggTilMelding("Tenker ...", "bot");
-
-  sporMistral(melding, apiNokkel, lasterId);
-}
-
 function leggTilMelding(tekst, avsender) {
   const div = document.createElement("div");
   div.className = "melding " + (avsender === "bruker" ? "melding-bruker" : "melding-bot");
