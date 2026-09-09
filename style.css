@@ -44,6 +44,78 @@ body {
   font-size: 0.95rem;
 }
 
+.innstillinger-knapp {
+  background: none;
+  border: 1px solid rgba(255,255,255,0.35);
+  color: var(--hvit);
+  border-radius: 3px;
+  padding: 0.4rem 0.8rem;
+  font-family: inherit;
+  font-size: 0.8rem;
+  margin-top: 1rem;
+  cursor: pointer;
+}
+
+.innstillinger-knapp:hover {
+  border-color: var(--gull);
+  color: var(--gull);
+}
+
+.innstillinger {
+  max-width: 780px;
+  margin: 1rem auto 0;
+  padding: 1rem 1.5rem;
+  background: var(--hvit);
+  border: 1px solid var(--kant);
+  border-radius: 4px;
+}
+
+.innstillinger label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: 500;
+  margin-bottom: 0.4rem;
+  color: var(--tekst-lys);
+}
+
+.innstillinger input {
+  width: 100%;
+  padding: 0.5rem 0.7rem;
+  border: 1px solid var(--kant);
+  border-radius: 3px;
+  font-family: inherit;
+  font-size: 0.9rem;
+  margin-bottom: 0.6rem;
+}
+
+.innstillinger-knapper {
+  display: flex;
+  gap: 0.5rem;
+}
+
+.innstillinger-knapper button {
+  font-family: inherit;
+  font-size: 0.85rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 3px;
+  border: 1px solid var(--kant);
+  cursor: pointer;
+  background: var(--krem);
+  color: var(--tekst);
+}
+
+#lagreNokkelKnapp {
+  background: var(--gronn-mork);
+  color: var(--hvit);
+  border-color: var(--gronn-mork);
+}
+
+.innstillinger-status {
+  font-size: 0.82rem;
+  color: var(--tekst-lys);
+  margin: 0.6rem 0 0;
+}
+
 main {
   max-width: 780px;
   margin: 0 auto;
