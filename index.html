@@ -11,18 +11,8 @@
 <header class="topp">
   <h1>Kunnskapshub</h1>
   <p class="undertekst">Kunnskap og verktøy for deltakere i fagprogrammet</p>
-  <button class="innstillinger-knapp" id="innstillingerKnapp">⚙ API-nøkkel</button>
+  <button class="innstillinger-knapp" id="ressurserKnapp">📁 Ressurser</button>
 </header>
-
-<section class="innstillinger" id="innstillingerPanel" style="display:none;">
-  <label for="apiNokkelInput">Mistral API-nøkkel</label>
-  <input type="password" id="apiNokkelInput" placeholder="Lim inn API-nøkkelen din her">
-  <div class="innstillinger-knapper">
-    <button id="lagreNokkelKnapp">Lagre</button>
-    <button id="slettNokkelKnapp">Slett nøkkel</button>
-  </div>
-  <p class="innstillinger-status" id="innstillingerStatus"></p>
-</section>
 
 <main>
 
@@ -51,6 +41,13 @@
     <button class="tilbake-knapp" id="tilbakeKnapp">← Tilbake til dashboard</button>
     <h2 id="artikkelOmradeTittel"></h2>
     <div id="artikkelListe"></div>
+  </section>
+  
+  <!-- Ressursvisning -->
+  <section class="artikkel-visning" id="ressurserVisning" style="display:none;">
+    <button class="tilbake-knapp" id="tilbakeFraRessurserKnapp">← Tilbake til dashboard</button>
+    <h2>Ressurser</h2>
+    <div id="ressursListe"></div>
   </section>
 
   <!-- Chatbot-seksjon -->
