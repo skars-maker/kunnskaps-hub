@@ -259,9 +259,10 @@ async function sporMistral(sporsmal, apiNokkel, lasterId) {
     const data = await respons.json();
     const fullTekst = data.choices[0].message.content;
 
-    const deler = fullTekst.split("---SPORSMAL---");
+       const deler = fullTekst.split(/-*\s*SP[ØO]RSM[ÅA]L\s*-*/i);
     const svarTekst = deler[0].trim();
     oppdaterMelding(lasterId, svarTekst);
+
 
     if (deler[1]) {
       const nyeSporsmal = deler[1]
