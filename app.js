@@ -109,14 +109,177 @@ function visArtikler(omradeId) {
   artikkelVisning.style.display = "block";
 }
 
-// ===== CHATBOT (plassholder - fylles ut i neste steg) =====
+// ===== INNSTILLINGER (API-nøkkel) =====
 
-document.getElementById("sendKnapp").addEventListener("click", function () {
-  const input = document.getElementById("chatInput");
-  if (!input.value.trim()) return;
-  const chatVindu = document.getElementById("chatVindu");
-  chatVindu.innerHTML += "<div class='melding melding-bruker'>" + input.value + "</div>";
-  chatVindu.innerHTML += "<div class='melding melding-bot'>Chatboten er ikke koblet til enda - det gjør vi i neste steg.</div>";
-  input.value = "";
-  chatVindu.scrollTop = chatVindu.scrollHeight;
+const innstillingerKnapp = document.getElementById("innstillingerKnapp");
+const innstillingerPanel = document.getElementById("innstillingerPanel");
+const apiNokkelInput = document.getElementById("apiNokkelInput");
+const lagreNokkelKnapp = document.getElementById("lagreNokkelKnapp");
+const slettNokkelKnapp = document.getElementById("slettNokkelKnapp");
+const innstillingerStatus = document.getElementById("innstillingerStatus");
+
+innstillingerKnapp.addEventListener("click", function () {
+  innstillingerPanel.style.display = (innstillingerPanel.style.display === "block") ? "none" : "block";
 });
+
+lagreNokkelKnapp.addEventListener("click", function () {
+  const verdi = apiNokkelInput.value.trim();
+  if (!verdi) return;
+  localStorage.setItem("mistralApiNokkel", verdi);
+  apiNokkelInput.value = "";
+  innstillingerStatus.textContent = "Nøkkel lagret i denne nettleseren.";
+});
+
+slettNokkelKnapp.addEventListener("click", function () {
+  if (!localStorage.getItem("mistralApiNokkel")) {
+    innstillingerStatus.textContent = "Ingen nøkkel er lagret.";
+    return;
+  }
+  const bekreft = confirm("Er du sikker på at du vil slette den lagrede API-nøkkelen?");
+  if (bekreft) {
+    localStorage.removeItem("mistralApiNokkel");
+    innstillingerStatus.textContent = "Nøkkel slettet.";
+  }
+});
+
+if (localStorage.getItem("mistralApiNokkel")) {
+  innstillingerStatus.textContent = "Nøkkel er lagret.";
+}
+
+// ===== SAMLE ALT ARTIKKELINNHOLD (til bruk for chatboten) =====
+
+function samleAltInnhold() {
+  let tekst = "";
+  for (const omradeId in artikkelData) {
+    const omrade = artikkelData[omradeId];
+    tekst += "\n\n=== " + omrade.tittel + " ===\n";
+    omrade.artikler.forEach(function (artikkel) {
+      tekst += "\n" + artikkel.tittel + "\n" + artikkel.innhold + "\n";
+    });
+  }
+  return tekst;
+}
+
+// ===== FORESLÅTTE SPØRSMÅL =====
+
+const foreslatteSporsmalDiv = document.getElementById("foreslatteSporsmal");
+
+const standardSporsmal = [
+  "Hva handler Day2Day om?",
+  "Hva er brufaser?",
+  "Hvilke referanser finnes i programmet?",
+  "Hva sier vi om læring i programmet?"
+];
+
+function visForeslatteSporsmal(listeMedSporsmal) {
+  foreslatteSporsmalDiv.innerHTML = "";
+  listeMedSporsmal.slice(0, 4).forEach(function (sporsmal) {
+    const knapp = document.createElement("button");
+    knapp.className = "sporsmal-chip";
+    knapp.textContent = sporsmal;
+    knapp.addEventListener("click", function () {
+      document.getElementById("chatInput").value = sporsmal;
+      document.getElementById("chatInput").focus();
+    });
+    foreslatteSporsmalDiv.appendChild(knapp);
+  });
+}
+
+visForeslatteSporsmal(standardSporsmal);
+
+// ===== CHATBOT (Mistral API) =====
+
+const chatVindu = document.getElementById("chatVindu");
+const chatInput = document.getElementById("chatInput");
+const sendKnapp = document.getElementById("sendKnapp");
+
+sendKnapp.addEventListener("click", sendMelding);
+chatInput.addEventListener("keydown", function (e) {
+  if (e.key === "Enter") sendMelding();
+});
+
+function sendMelding() {
+  const melding = chatInput.value.trim();
+  if (!melding) return;
+
+  const apiNokkel = localStorage.getItem("mistralApiNokkel");
+  if (!apiNokkel) {
+    leggTilMelding("Du må først lagre en Mistral API-nøkkel under ⚙ API-nøkkel øverst på siden.", "bot");
+    return;
+  }
+
+  leggTilMelding(melding, "bruker");
+  chatInput.value = "";
+  const lasterId = leggTilMelding("Tenker ...", "bot");
+
+  sporMistral(melding, apiNokkel, lasterId);
+}
+
+function leggTilMelding(tekst, avsender) {
+  const div = document.createElement("div");
+  div.className = "melding " + (avsender === "bruker" ? "melding-bruker" : "melding-bot");
+  div.textContent = tekst;
+  const id = "m-" + Date.now() + "-" + Math.floor(Math.random() * 1000);
+  div.id = id;
+  chatVindu.appendChild(div);
+  chatVindu.scrollTop = chatVindu.scrollHeight;
+  return id;
+}
+
+async function sporMistral(sporsmal, apiNokkel, lasterId) {
+  const innhold = samleAltInnhold();
+
+  const systemPrompt =
+    "Du er en kunnskapsassistent for Kunnskapshub, et fagprogram for utvikling i fotballklubber. " +
+    "Svar kun basert på innholdet under, kort og presist, på norsk. Hvis svaret ikke finnes i innholdet, si det tydelig. " +
+    "Etter svaret ditt, skriv nøyaktig linjen ---SPORSMAL--- og deretter 4 korte oppfølgingsspørsmål brukeren kan stille videre, ett per linje, uten nummerering.\n\n" +
+    "INNHOLD:" + innhold;
+
+  try {
+    const respons = await fetch("https://api.mistral.ai/v1/chat/completions", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        "Authorization": "Bearer " + apiNokkel
+      },
+      body: JSON.stringify({
+        model: "mistral-small-latest",
+        messages: [
+          { role: "system", content: systemPrompt },
+          { role: "user", content: sporsmal }
+        ]
+      })
+    });
+
+    if (!respons.ok) {
+      oppdaterMelding(lasterId, "Feil fra Mistral (HTTP " + respons.status + "). Sjekk at API-nøkkelen er riktig.");
+      return;
+    }
+
+    const data = await respons.json();
+    const fullTekst = data.choices[0].message.content;
+
+    const deler = fullTekst.split("---SPORSMAL---");
+    const svarTekst = deler[0].trim();
+    oppdaterMelding(lasterId, svarTekst);
+
+    if (deler[1]) {
+      const nyeSporsmal = deler[1]
+        .split("\n")
+        .map(function (s) { return s.trim(); })
+        .filter(function (s) { return s.length > 0; });
+      if (nyeSporsmal.length > 0) {
+        visForeslatteSporsmal(nyeSporsmal);
+      }
+    }
+  } catch (feil) {
+    oppdaterMelding(lasterId, "Klarte ikke å kontakte Mistral. Sjekk internettforbindelsen og prøv igjen.");
+  }
+}
+
+function oppdaterMelding(id, nyTekst) {
+  const div = document.getElementById(id);
+  if (div) div.textContent = nyTekst;
+  chatVindu.scrollTop = chatVindu.scrollHeight;
+}
+
