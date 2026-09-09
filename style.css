@@ -1,0 +1,280 @@
+@import url('https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,600;9..144,700&family=IBM+Plex+Sans:wght@400;500;600&display=swap');
+
+:root {
+  --gronn-mork: #1B4332;
+  --gronn-lys: #84A98C;
+  --krem: #F7F5F0;
+  --gull: #B8912F;
+  --tekst: #1A1A1A;
+  --tekst-lys: #5C6B62;
+  --hvit: #FFFFFF;
+  --kant: #D8D3C4;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--krem);
+  color: var(--tekst);
+  font-family: 'IBM Plex Sans', sans-serif;
+  line-height: 1.5;
+}
+
+.topp {
+  background: var(--gronn-mork);
+  color: var(--hvit);
+  padding: 2.5rem 1.5rem 2rem;
+  text-align: center;
+}
+
+.topp h1 {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 2.2rem;
+  margin: 0 0 0.4rem;
+  letter-spacing: -0.01em;
+}
+
+.undertekst {
+  margin: 0;
+  color: var(--gronn-lys);
+  font-size: 0.95rem;
+}
+
+main {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+/* Hovedområde-kort */
+.omrader {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem;
+  margin-bottom: 2rem;
+}
+
+.omrade-kort {
+  background: var(--hvit);
+  border: 1px solid var(--kant);
+  border-radius: 4px;
+  padding: 1.6rem 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  cursor: pointer;
+  font-family: inherit;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+
+.omrade-kort:hover,
+.omrade-kort:focus-visible {
+  border-color: var(--gull);
+  transform: translateY(-2px);
+}
+
+.omrade-ikon {
+  font-size: 1.8rem;
+}
+
+.omrade-tittel {
+  font-weight: 600;
+  font-size: 0.95rem;
+  text-align: center;
+  color: var(--gronn-mork);
+}
+
+/* Artikkelvisning */
+.artikkel-visning {
+  background: var(--hvit);
+  border: 1px solid var(--kant);
+  border-radius: 4px;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.tilbake-knapp {
+  background: none;
+  border: none;
+  color: var(--tekst-lys);
+  font-family: inherit;
+  font-size: 0.9rem;
+  cursor: pointer;
+  padding: 0;
+  margin-bottom: 1rem;
+}
+
+.tilbake-knapp:hover {
+  color: var(--gronn-mork);
+}
+
+#artikkelOmradeTittel {
+  font-family: 'Fraunces', serif;
+  color: var(--gronn-mork);
+  margin-top: 0;
+}
+
+.artikkel-kort {
+  border-top: 1px solid var(--kant);
+  padding: 1.2rem 0;
+}
+
+.artikkel-kort:first-of-type {
+  border-top: none;
+}
+
+.artikkel-kort h3 {
+  margin: 0 0 0.4rem;
+  font-size: 1.05rem;
+}
+
+.artikkel-tekst {
+  color: var(--tekst);
+  font-size: 0.95rem;
+}
+
+.artikkel-knapper {
+  margin-top: 0.7rem;
+  display: flex;
+  gap: 0.5rem;
+}
+
+.artikkel-knapp {
+  background: var(--krem);
+  border: 1px solid var(--kant);
+  border-radius: 3px;
+  padding: 0.4rem 0.8rem;
+  font-size: 0.85rem;
+  font-family: inherit;
+  cursor: pointer;
+  color: var(--gronn-mork);
+}
+
+.artikkel-knapp:hover {
+  background: var(--gronn-lys);
+  color: var(--hvit);
+  border-color: var(--gronn-lys);
+}
+
+.artikkel-ekstra {
+  margin-top: 0.7rem;
+  padding: 0.7rem;
+  background: var(--krem);
+  border-left: 3px solid var(--gull);
+  font-size: 0.9rem;
+  display: none;
+}
+
+/* Chat-seksjon */
+.chat-seksjon {
+  background: var(--hvit);
+  border: 1px solid var(--kant);
+  border-radius: 4px;
+  padding: 1.5rem;
+}
+
+.chat-seksjon h2 {
+  font-family: 'Fraunces', serif;
+  color: var(--gronn-mork);
+  margin-top: 0;
+  font-size: 1.3rem;
+}
+
+.foreslatte-sporsmal {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.sporsmal-chip {
+  background: var(--krem);
+  border: 1px solid var(--kant);
+  border-radius: 3px;
+  padding: 0.55rem 0.7rem;
+  font-size: 0.82rem;
+  text-align: left;
+  cursor: pointer;
+  font-family: inherit;
+  color: var(--tekst);
+}
+
+.sporsmal-chip:hover {
+  border-color: var(--gull);
+}
+
+.chat-vindu {
+  min-height: 120px;
+  max-height: 320px;
+  overflow-y: auto;
+  border: 1px solid var(--kant);
+  border-radius: 3px;
+  padding: 0.8rem;
+  margin-bottom: 0.8rem;
+  background: var(--krem);
+}
+
+.melding {
+  margin-bottom: 0.7rem;
+  padding: 0.6rem 0.8rem;
+  border-radius: 3px;
+  font-size: 0.9rem;
+  max-width: 85%;
+}
+
+.melding-bruker {
+  background: var(--gronn-mork);
+  color: var(--hvit);
+  margin-left: auto;
+}
+
+.melding-bot {
+  background: var(--hvit);
+  border: 1px solid var(--kant);
+}
+
+.chat-inntasting {
+  display: flex;
+  gap: 0.5rem;
+}
+
+#chatInput {
+  flex: 1;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--kant);
+  border-radius: 3px;
+  font-family: inherit;
+  font-size: 0.95rem;
+}
+
+#sendKnapp {
+  background: var(--gronn-mork);
+  color: var(--hvit);
+  border: none;
+  border-radius: 3px;
+  padding: 0.6rem 1.2rem;
+  font-family: inherit;
+  font-weight: 500;
+  cursor: pointer;
+}
+
+#sendKnapp:hover {
+  background: #14322578;
+  opacity: 0.9;
+}
+
+@media (max-width: 480px) {
+  .omrader,
+  .foreslatte-sporsmal {
+    grid-template-columns: 1fr;
+  }
+
+  .topp h1 {
+    font-size: 1.8rem;
+  }
+}
