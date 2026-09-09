@@ -109,41 +109,50 @@ function visArtikler(omradeId) {
   artikkelVisning.style.display = "block";
 }
 
-// ===== INNSTILLINGER (API-nøkkel) =====
+// ===== RESSURSER =====
+// Legg til flere ressurser/maler ved å kopiere et objekt inni listen under.
+// "lenke" peker til en fil du har lastet opp i GitHub-repoet (f.eks. "ressurser/mal-referat.pdf").
 
-const innstillingerKnapp = document.getElementById("innstillingerKnapp");
-const innstillingerPanel = document.getElementById("innstillingerPanel");
-const apiNokkelInput = document.getElementById("apiNokkelInput");
-const lagreNokkelKnapp = document.getElementById("lagreNokkelKnapp");
-const slettNokkelKnapp = document.getElementById("slettNokkelKnapp");
-const innstillingerStatus = document.getElementById("innstillingerStatus");
-
-innstillingerKnapp.addEventListener("click", function () {
-  innstillingerPanel.style.display = (innstillingerPanel.style.display === "block") ? "none" : "block";
-});
-
-lagreNokkelKnapp.addEventListener("click", function () {
-  const verdi = apiNokkelInput.value.trim();
-  if (!verdi) return;
-  localStorage.setItem("mistralApiNokkel", verdi);
-  apiNokkelInput.value = "";
-  innstillingerStatus.textContent = "Nøkkel lagret i denne nettleseren.";
-});
-
-slettNokkelKnapp.addEventListener("click", function () {
-  if (!localStorage.getItem("mistralApiNokkel")) {
-    innstillingerStatus.textContent = "Ingen nøkkel er lagret.";
-    return;
+const ressursData = [
+  {
+    id: "res-1",
+    tittel: "Eksempel: Mal for møtereferat",
+    beskrivelse: "Dette er en eksempelressurs. Erstatt med dine egne maler når du redigerer ressursData i app.js.",
+    lenke: "#"
   }
-  const bekreft = confirm("Er du sikker på at du vil slette den lagrede API-nøkkelen?");
-  if (bekreft) {
-    localStorage.removeItem("mistralApiNokkel");
-    innstillingerStatus.textContent = "Nøkkel slettet.";
-  }
+];
+
+const ressurserKnapp = document.getElementById("ressurserKnapp");
+const ressurserVisning = document.getElementById("ressurserVisning");
+const ressursListe = document.getElementById("ressursListe");
+const tilbakeFraRessurserKnapp = document.getElementById("tilbakeFraRessurserKnapp");
+
+ressurserKnapp.addEventListener("click", function () {
+  visRessurser();
 });
 
-if (localStorage.getItem("mistralApiNokkel")) {
-  innstillingerStatus.textContent = "Nøkkel er lagret.";
+tilbakeFraRessurserKnapp.addEventListener("click", function () {
+  ressurserVisning.style.display = "none";
+  omraderSeksjon.style.display = "grid";
+});
+
+function visRessurser() {
+  ressursListe.innerHTML = "";
+
+  ressursData.forEach(function (ressurs) {
+    const kort = document.createElement("div");
+    kort.className = "artikkel-kort";
+    kort.innerHTML =
+      "<h3>" + ressurs.tittel + "</h3>" +
+      "<p class='artikkel-tekst'>" + ressurs.beskrivelse + "</p>" +
+      "<div class='artikkel-knapper'>" +
+        "<a class='artikkel-knapp' style='text-decoration:none; display:inline-block;' href='" + ressurs.lenke + "' target='_blank' rel='noopener'>Last ned</a>" +
+      "</div>";
+    ressursListe.appendChild(kort);
+  });
+
+  omraderSeksjon.style.display = "none";
+  ressurserVisning.style.display = "block";
 }
 
 // ===== SAMLE ALT ARTIKKELINNHOLD (til bruk for chatboten) =====
@@ -202,11 +211,12 @@ function sendMelding() {
   const melding = chatInput.value.trim();
   if (!melding) return;
 
-  const apiNokkel = localStorage.getItem("mistralApiNokkel");
-  if (!apiNokkel) {
-    leggTilMelding("Du må først lagre en Mistral API-nøkkel under ⚙ API-nøkkel øverst på siden.", "bot");
-    return;
-  }
+  leggTilMelding(melding, "bruker");
+  chatInput.value = "";
+  const lasterId = leggTilMelding("Tenker ...", "bot");
+
+  sporMistral(melding, lasterId);
+}
 
   leggTilMelding(melding, "bruker");
   chatInput.value = "";
@@ -226,7 +236,7 @@ function leggTilMelding(tekst, avsender) {
   return id;
 }
 
-async function sporMistral(sporsmal, apiNokkel, lasterId) {
+async function sporMistral(sporsmal, lasterId) {
   const innhold = samleAltInnhold();
 
   const systemPrompt =
@@ -236,33 +246,24 @@ async function sporMistral(sporsmal, apiNokkel, lasterId) {
     "INNHOLD:" + innhold;
 
   try {
-    const respons = await fetch("https://api.mistral.ai/v1/chat/completions", {
+    const respons = await fetch("/.netlify/functions/mistral-chat", {
       method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-        "Authorization": "Bearer " + apiNokkel
-      },
-      body: JSON.stringify({
-        model: "mistral-small-latest",
-        messages: [
-          { role: "system", content: systemPrompt },
-          { role: "user", content: sporsmal }
-        ]
-      })
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ systemPrompt: systemPrompt, sporsmal: sporsmal })
     });
 
+    const data = await respons.json();
+
     if (!respons.ok) {
-      oppdaterMelding(lasterId, "Feil fra Mistral (HTTP " + respons.status + "). Sjekk at API-nøkkelen er riktig.");
+      oppdaterMelding(lasterId, "Feil fra chatboten (HTTP " + respons.status + "). Prøv igjen om litt.");
       return;
     }
 
-    const data = await respons.json();
     const fullTekst = data.choices[0].message.content;
 
-       const deler = fullTekst.split(/-*\s*SP[ØO]RSM[ÅA]L\s*-*/i);
+    const deler = fullTekst.split(/-*\s*SP[ØO]RSM[ÅA]L\s*-*/i);
     const svarTekst = deler[0].trim();
     oppdaterMelding(lasterId, svarTekst);
-
 
     if (deler[1]) {
       const nyeSporsmal = deler[1]
@@ -274,7 +275,7 @@ async function sporMistral(sporsmal, apiNokkel, lasterId) {
       }
     }
   } catch (feil) {
-    oppdaterMelding(lasterId, "Klarte ikke å kontakte Mistral. Sjekk internettforbindelsen og prøv igjen.");
+    oppdaterMelding(lasterId, "Klarte ikke å kontakte chatboten. Sjekk internettforbindelsen og prøv igjen.");
   }
 }
 
