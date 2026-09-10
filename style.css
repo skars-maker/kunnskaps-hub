@@ -205,6 +205,22 @@ main {
   font-size: 1.05rem;
 }
 
+.artikkel-temaer {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-bottom: 0.6rem;
+}
+
+.tema-tag {
+  background: var(--krem);
+  border: 1px solid var(--kant);
+  border-radius: 12px;
+  padding: 0.2rem 0.65rem;
+  font-size: 0.75rem;
+  color: var(--gronn-mork);
+}
+
 .artikkel-tekst {
   color: var(--tekst);
   font-size: 0.95rem;

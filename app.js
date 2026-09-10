@@ -9,6 +9,7 @@ const artikkelData = {
       {
         id: "d2d-1",
         tittel: "Eksempelartikkel: Daglig rutine",
+        temaer: ["Tema 1", "Tema 2", "Tema 3", "Tema 4"],
         innhold: "Dette er en eksempelartikkel under Day2Day. Erstatt denne teksten med ditt eget innhold når du redigerer artikkelData i app.js.",
         oversettelse: "Skriv inn oversettelsen av artikkelen her.",
         sammendrag: "Skriv inn et kort sammendrag av artikkelen her."
@@ -21,6 +22,7 @@ const artikkelData = {
       {
         id: "bru-1",
         tittel: "Eksempelartikkel: Om brufaser",
+        temaer: ["Tema 1", "Tema 2", "Tema 3", "Tema 4"],
         innhold: "Dette er en eksempelartikkel under Brufaser. Erstatt denne teksten med ditt eget innhold.",
         oversettelse: "Skriv inn oversettelsen av artikkelen her.",
         sammendrag: "Skriv inn et kort sammendrag av artikkelen her."
@@ -33,6 +35,7 @@ const artikkelData = {
       {
         id: "ref-1",
         tittel: "Eksempelartikkel: Referansemateriale",
+        temaer: ["Tema 1", "Tema 2", "Tema 3", "Tema 4"],
         innhold: "Dette er en eksempelartikkel under Referanser. Erstatt denne teksten med ditt eget innhold.",
         oversettelse: "Skriv inn oversettelsen av artikkelen her.",
         sammendrag: "Skriv inn et kort sammendrag av artikkelen her."
@@ -45,6 +48,7 @@ const artikkelData = {
       {
         id: "laer-1",
         tittel: "Eksempelartikkel: Hvordan vi lærer",
+        temaer: ["Tema 1", "Tema 2", "Tema 3", "Tema 4"],
         innhold: "Dette er en eksempelartikkel under Kunnskap om læring. Erstatt denne teksten med ditt eget innhold.",
         oversettelse: "Skriv inn oversettelsen av artikkelen her.",
         sammendrag: "Skriv inn et kort sammendrag av artikkelen her."
@@ -83,8 +87,12 @@ function visArtikler(omradeId) {
   omrade.artikler.forEach(function (artikkel) {
     const kort = document.createElement("div");
     kort.className = "artikkel-kort";
+    const temaerHtml = (artikkel.temaer || [])
+      .map(function (tema) { return "<span class='tema-tag'>" + tema + "</span>"; })
+      .join("");
     kort.innerHTML =
       "<h3>" + artikkel.tittel + "</h3>" +
+      "<div class='artikkel-temaer'>" + temaerHtml + "</div>" +
       "<p class='artikkel-tekst'>" + artikkel.innhold + "</p>" +
       "<div class='artikkel-knapper'>" +
         "<button class='artikkel-knapp' data-type='oversettelse' data-id='" + artikkel.id + "'>Oversett</button>" +
