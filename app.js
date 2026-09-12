@@ -11,8 +11,8 @@ const artikkelData = {
         tittel: "Eksempelartikkel: Daglig rutine",
         temaer: ["Tema 1", "Tema 2", "Tema 3", "Tema 4"],
         innhold: "Dette er en eksempelartikkel under Day2Day. Erstatt denne teksten med ditt eget innhold når du redigerer artikkelData i app.js.",
-        oversettelse: "Skriv inn oversettelsen av artikkelen her.",
-        sammendrag: "Skriv inn et kort sammendrag av artikkelen her."
+        oversettelseLenke: "#",
+        sammendragLenke: "#"
       }
     ]
   },
@@ -21,11 +21,11 @@ const artikkelData = {
     artikler: [
       {
         id: "bru-1",
-        tittel: "Eksempelartikkel: Om brufaser",
-        temaer: ["Tema 1", "Tema 2", "Tema 3", "Tema 4"],
-        innhold: "Dette er en eksempelartikkel under Brufaser. Erstatt denne teksten med ditt eget innhold.",
-        oversettelse: "Skriv inn oversettelsen av artikkelen her.",
-        sammendrag: "Skriv inn et kort sammendrag av artikkelen her."
+        tittel: "5 grunner til at de fleste akademispillere mislykkes i å nå førstelaget",
+        temaer: ["Akademifrafall", "Førstelagsintegrering", "Spillerutvikling", "Prestasjonskultur"],
+        innhold: "Artikkelen ser på hvorfor så få akademispillere klarer å etablere seg på førstelaget, og peker på fire sentrale hindre: det fysiske og mentale gapet til seniorfotball, hard konkurranse om plasser, og betydningen av utlån og et godt støtteapparat for å lykkes med overgangen.",
+        oversettelseLenke: "artikkel-filer/brufaser-01-oversettelse.pdf",
+        sammendragLenke: "artikkel-filer/brufaser-01-sammendrag.pdf"
       }
     ]
   },
@@ -37,8 +37,8 @@ const artikkelData = {
         tittel: "Eksempelartikkel: Referansemateriale",
         temaer: ["Tema 1", "Tema 2", "Tema 3", "Tema 4"],
         innhold: "Dette er en eksempelartikkel under Referanser. Erstatt denne teksten med ditt eget innhold.",
-        oversettelse: "Skriv inn oversettelsen av artikkelen her.",
-        sammendrag: "Skriv inn et kort sammendrag av artikkelen her."
+        oversettelseLenke: "#",
+        sammendragLenke: "#"
       }
     ]
   },
@@ -50,8 +50,8 @@ const artikkelData = {
         tittel: "Eksempelartikkel: Hvordan vi lærer",
         temaer: ["Tema 1", "Tema 2", "Tema 3", "Tema 4"],
         innhold: "Dette er en eksempelartikkel under Kunnskap om læring. Erstatt denne teksten med ditt eget innhold.",
-        oversettelse: "Skriv inn oversettelsen av artikkelen her.",
-        sammendrag: "Skriv inn et kort sammendrag av artikkelen her."
+        oversettelseLenke: "#",
+        sammendragLenke: "#"
       }
     ]
   }
@@ -95,22 +95,10 @@ function visArtikler(omradeId) {
       "<div class='artikkel-temaer'>" + temaerHtml + "</div>" +
       "<p class='artikkel-tekst'>" + artikkel.innhold + "</p>" +
       "<div class='artikkel-knapper'>" +
-        "<button class='artikkel-knapp' data-type='oversettelse' data-id='" + artikkel.id + "'>Oversett</button>" +
-        "<button class='artikkel-knapp' data-type='sammendrag' data-id='" + artikkel.id + "'>Sammendrag</button>" +
-      "</div>" +
-      "<div class='artikkel-ekstra' id='ekstra-oversettelse-" + artikkel.id + "'>" + artikkel.oversettelse + "</div>" +
-      "<div class='artikkel-ekstra' id='ekstra-sammendrag-" + artikkel.id + "'>" + artikkel.sammendrag + "</div>";
+        "<a class='artikkel-knapp' href='" + artikkel.oversettelseLenke + "' target='_blank' rel='noopener'>Oversett</a>" +
+        "<a class='artikkel-knapp' href='" + artikkel.sammendragLenke + "' target='_blank' rel='noopener'>Sammendrag</a>" +
+      "</div>";
     artikkelListe.appendChild(kort);
-  });
-
-  // Legg på klikk-lyttere for de nye knappene
-  artikkelListe.querySelectorAll(".artikkel-knapp").forEach(function (knapp) {
-    knapp.addEventListener("click", function () {
-      const type = knapp.getAttribute("data-type");
-      const id = knapp.getAttribute("data-id");
-      const boks = document.getElementById("ekstra-" + type + "-" + id);
-      boks.style.display = (boks.style.display === "block") ? "none" : "block";
-    });
   });
 
   omraderSeksjon.style.display = "none";
