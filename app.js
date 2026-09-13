@@ -12,7 +12,8 @@ const artikkelData = {
         temaer: ["Tema 1", "Tema 2", "Tema 3", "Tema 4"],
         innhold: "Dette er en eksempelartikkel under Day2Day. Erstatt denne teksten med ditt eget innhold når du redigerer artikkelData i app.js.",
         oversettelseLenke: "#",
-        sammendragLenke: "#"
+        sammendragLenke: "#",
+        originalLenke: "#"
       }
     ]
   },
@@ -25,7 +26,8 @@ const artikkelData = {
         temaer: ["Akademifrafall", "Førstelagsintegrering", "Spillerutvikling", "Prestasjonskultur"],
         innhold: "Artikkelen ser på hvorfor så få akademispillere klarer å etablere seg på førstelaget, og peker på fire sentrale hindre: det fysiske og mentale gapet til seniorfotball, hard konkurranse om plasser, og betydningen av utlån og et godt støtteapparat for å lykkes med overgangen.",
         oversettelseLenke: "artikkel-filer/brufaser-01-oversettelse.pdf",
-        sammendragLenke: "artikkel-filer/brufaser-01-sammendrag.pdf"
+        sammendragLenke: "artikkel-filer/brufaser-01-sammendrag.pdf",
+        originalLenke: "https://4pballer.com/5-reasons-why-most-academy-players-fail-to-make-the-first-team/"
       }
     ]
   },
@@ -38,7 +40,8 @@ const artikkelData = {
         temaer: ["Tema 1", "Tema 2", "Tema 3", "Tema 4"],
         innhold: "Dette er en eksempelartikkel under Referanser. Erstatt denne teksten med ditt eget innhold.",
         oversettelseLenke: "#",
-        sammendragLenke: "#"
+        sammendragLenke: "#",
+        originalLenke: "#"
       }
     ]
   },
@@ -51,7 +54,8 @@ const artikkelData = {
         temaer: ["Tema 1", "Tema 2", "Tema 3", "Tema 4"],
         innhold: "Dette er en eksempelartikkel under Kunnskap om læring. Erstatt denne teksten med ditt eget innhold.",
         oversettelseLenke: "#",
-        sammendragLenke: "#"
+        sammendragLenke: "#",
+        originalLenke: "#"
       }
     ]
   }
@@ -97,6 +101,7 @@ function visArtikler(omradeId) {
       "<div class='artikkel-knapper'>" +
         "<a class='artikkel-knapp' href='" + artikkel.oversettelseLenke + "' target='_blank' rel='noopener'>Oversett</a>" +
         "<a class='artikkel-knapp' href='" + artikkel.sammendragLenke + "' target='_blank' rel='noopener'>Sammendrag</a>" +
+        "<a class='artikkel-knapp' href='" + artikkel.originalLenke + "' target='_blank' rel='noopener'>Original</a>" +
       "</div>";
     artikkelListe.appendChild(kort);
   });
@@ -192,9 +197,18 @@ function visForeslatteSporsmal(listeMedSporsmal) {
 
 visForeslatteSporsmal(standardSporsmal);
 
+// ===== TØM SPØRSMÅLSLISTE =====
+
+const tomSporsmalKnapp = document.getElementById("tomSporsmalKnapp");
+const chatVindu = document.getElementById("chatVindu");
+
+tomSporsmalKnapp.addEventListener("click", function () {
+  chatVindu.innerHTML = "";
+  visForeslatteSporsmal(standardSporsmal);
+});
+
 // ===== CHATBOT (Mistral API) =====
 
-const chatVindu = document.getElementById("chatVindu");
 const chatInput = document.getElementById("chatInput");
 const sendKnapp = document.getElementById("sendKnapp");
 

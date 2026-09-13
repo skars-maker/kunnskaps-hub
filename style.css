@@ -266,6 +266,34 @@ main {
   font-size: 1.3rem;
 }
 
+.chat-topptekst {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.6rem;
+  flex-wrap: wrap;
+}
+
+.chat-topptekst h2 {
+  margin: 0;
+}
+
+.tom-knapp {
+  background: none;
+  border: 1px solid var(--kant);
+  border-radius: 3px;
+  color: var(--tekst-lys);
+  font-family: inherit;
+  font-size: 0.78rem;
+  padding: 0.35rem 0.7rem;
+  cursor: pointer;
+}
+
+.tom-knapp:hover {
+  border-color: var(--gull);
+  color: var(--gull);
+}
+
 .foreslatte-sporsmal {
   display: grid;
   grid-template-columns: 1fr 1fr;
