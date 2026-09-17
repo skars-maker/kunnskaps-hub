@@ -270,6 +270,15 @@ const artikkelData = {
         originalLenke: "artikkel-filer/bru-27-original.pdf",
         oversettelseLenke: "artikkel-filer/bru-27-oversettelse.pdf",
         sammendragLenke: "artikkel-filer/bru-27-sammendrag.pdf"
+      },
+      {
+        id: "bru-28",
+        tittel: "Arbeidet med kulturell overgang: en fremvoksende modell",
+        temaer: ["Kulturell overgang", "Transnasjonal idrettskarriere", "Sosial reposisjonering", "Mening og identitet i overgang"],
+        innhold: "Basert på livshistorie-intervjuer med 15 utøvere fra flere idretter presenterer Ryba, Stambulova og Ronkainen en modell for kulturell overgang i tre faser (før overgangen, akutt kulturell tilpasning, sosiokulturell tilpasning), drevet av tre mestringsmekanismer: sosial reposisjonering, forhandling av kulturell praksis og rekonstruksjon av mening.",
+        originalLenke: "artikkel-filer/bru-28-original.pdf",
+        oversettelseLenke: "artikkel-filer/bru-28-oversettelse.pdf",
+        sammendragLenke: "artikkel-filer/bru-28-sammendrag.pdf"
       }
     ]
   },
