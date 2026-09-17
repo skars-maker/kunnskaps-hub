@@ -36,7 +36,7 @@ const artikkelData = {
         innhold: "En omfattende metastudie som samler funn fra 27 kvalitative studier og 261 informanter for å kartlegge hvordan overgangen fra junior til senior i idrett faktisk fungerer, og hvilke faktorer som avgjør om den lykkes.",
         oversettelseLenke: "artikkel-filer/brufaser-02-oversettelse.pdf",
         sammendragLenke: "artikkel-filer/brufaser-02-sammendrag.pdf",
-        originalLenke: "https://doi.org/10.1016/j.psychsport.2019.101556"
+        originalLenke: "artikkel-filer/brufaser-02-original.pdf"
       },
       {
         id: "bru-03",
@@ -72,7 +72,7 @@ const artikkelData = {
         innhold: "En kvalitativ studie av ti norske juniorspillere som kartlegger hvilke konkurranse- og organisatoriske stressfaktorer de opplever i overgangen til seniorfotball, og hvilke tiltak klubber kan sette inn for å redusere dem.",
         oversettelseLenke: "artikkel-filer/brufaser-09-oversettelse.pdf",
         sammendragLenke: "artikkel-filer/brufaser-09-sammendrag.pdf",
-        originalLenke: "https://doi.org/10.36950/2022ciss003"
+        originalLenke: "artikkel-filer/brufaser-09-original.pdf"
       },
       {
         id: "bru-10",
