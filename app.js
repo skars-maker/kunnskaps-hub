@@ -135,7 +135,7 @@ const artikkelData = {
         innhold: "En kvalitativ studie av fem unge engelske fotballspillere, intervjuet både før og etter overgangen til førstelaget, som kartlegger hvordan motivasjon, selvtillit, stressfaktorer og sosial støtte endrer seg gjennom selve overgangsøyeblikket.",
         oversettelseLenke: "artikkel-filer/brufaser-18-oversettelse.pdf",
         sammendragLenke: "artikkel-filer/brufaser-18-sammendrag.pdf",
-        originalLenke: "https://www.semanticscholar.org/paper/From-youth-team-to-first-team%3A-An-investigation-the-Morris-Tod/501748330be1438752f5bb176249901db482db27"
+        originalLenke: "artikkel-filer/brufaser-18-original.pdf"
       },
       {
         id: "bru-19",
