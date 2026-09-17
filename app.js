@@ -45,7 +45,7 @@ const artikkelData = {
         innhold: "En systematisk kunnskapsoppsummering (scoping review) av 35 internasjonale studier som kartlegger hva som hemmer og hva som fremmer overgangen fra ungdoms- til eliteseniorfotball for gutter/menn.",
         oversettelseLenke: "artikkel-filer/brufaser-03-oversettelse.pdf",
         sammendragLenke: "artikkel-filer/brufaser-03-sammendrag.pdf",
-        originalLenke: "https://www.mdpi.com/2075-4663/13/12/440"
+        originalLenke: "https://www.mdpi.com/2075-4663/13/12/440/pdf?version=1764930759"
       },
       {
         id: "bru-06",
@@ -117,7 +117,7 @@ const artikkelData = {
         innhold: "En stor statistisk analyse av 12 000 spillere i 31 europeiske ligaer, som dokumenterer at klubbutviklede spillere får stadig mindre spilletid – til tross for en påvist sammenheng mellom egenutvikling og sportslig suksess.",
         oversettelseLenke: "artikkel-filer/brufaser-16-oversettelse.pdf",
         sammendragLenke: "artikkel-filer/brufaser-16-sammendrag.pdf",
-        originalLenke: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8758176/"
+        originalLenke: "https://eprints.gla.ac.uk/252908/2/252908.pdf"
       },
       {
         id: "bru-17",
