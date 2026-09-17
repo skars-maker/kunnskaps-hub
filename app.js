@@ -216,6 +216,15 @@ const artikkelData = {
         originalLenke: "https://footballbenchmark.com/w/eca-report-released-transition-from-academy-to-first-team-football",
         oversettelseLenke: "artikkel-filer/bru-21-oversettelse.pdf",
         sammendragLenke: "artikkel-filer/bru-21-sammendrag.pdf"
+      },
+      {
+        id: "bru-22",
+        tittel: "Spilleres opplevelse av overgangen fra akademi til førstelag i profesjonell fotball (PhD-avhandling)",
+        temaer: ["Transisjon ungdom–senior", "Spilletid og mulighet", "Kontrakter og maktdynamikk", "Organisatoriske prosesser"],
+        innhold: "Doktoravhandling av Scott Swainston (University of Exeter) om overgangen fra akademi til førstelag i fotball. Bygger på en kartleggingsstudie av 17 studier og to egne empiriske studier, og introduserer begrepet «den grå perioden» — fasen der en spiller er en del av førstelagsmiljøet uten å få spilletid.",
+        originalLenke: "https://ore.exeter.ac.uk/repository/handle/10871/133218",
+        oversettelseLenke: "artikkel-filer/bru-22-oversettelse.pdf",
+        sammendragLenke: "artikkel-filer/bru-22-sammendrag.pdf"
       }
     ]
   },
