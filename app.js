@@ -64,6 +64,42 @@ const artikkelData = {
         oversettelseLenke: "artikkel-filer/brufaser-07-oversettelse.pdf",
         sammendragLenke: "artikkel-filer/brufaser-07-sammendrag.pdf",
         originalLenke: "https://www.cpfc.co.uk/news/announcement/jo-potters-coaching-staff-confirmed/"
+      },
+      {
+        id: "bru-08",
+        tittel: "Overgangen fra akademi til seniornivå i elitefotball: en akademisk og praktisk utredning",
+        temaer: ["Overgangstrener", "Akademiklassifisering", "Wyllemans modell", "Sosiokulturelt kultursjokk"],
+        innhold: "En grundig syntese av internasjonal forskning og praktisk erfaring om overgangsfasen i elitefotball, som blant annet ser på CIES-tall for klubbutviklede spillere, Wyllemans og Stambulovas teoretiske modeller, og hvorfor rollen som overgangstrener har blitt stadig viktigere.",
+        oversettelseLenke: "artikkel-filer/brufaser-08-oversettelse.pdf",
+        sammendragLenke: "artikkel-filer/brufaser-08-sammendrag.pdf",
+        originalLenke: "#"
+      },
+      {
+        id: "bru-09",
+        tittel: "Prestasjonsmessige og organisatoriske stressorer i junior-til-senior-overgangen i fotball (Rye et al., 2022)",
+        temaer: ["Prestasjonsstressorer", "Organisatoriske stressorer", "Dobbeltkarriere", "Norsk fotball"],
+        innhold: "En kvalitativ studie av ti norske juniorspillere som kartlegger hvilke konkurranse- og organisatoriske stressfaktorer de opplever i overgangen til seniorfotball, og hvilke tiltak klubber kan sette inn for å redusere dem.",
+        oversettelseLenke: "artikkel-filer/brufaser-09-oversettelse.pdf",
+        sammendragLenke: "artikkel-filer/brufaser-09-sammendrag.pdf",
+        originalLenke: "https://doi.org/10.36950/2022ciss003"
+      },
+      {
+        id: "bru-10",
+        tittel: "Sjokkerende mangel på spilletid for unge skotter avdekket i SFA-rapport",
+        temaer: ["Skotsk fotball (SFA)", "Spilletid for unge", "Den gylne alder (16-18)", "Spillerhandel"],
+        innhold: "En SFA-bestilt rapport avdekker at unge skotske talenter i svært liten grad får spilletid på seniornivå sammenlignet med resten av Europa, og foreslår mer fleksible utlånsordninger som løsning.",
+        oversettelseLenke: "artikkel-filer/brufaser-10-oversettelse.pdf",
+        sammendragLenke: "artikkel-filer/brufaser-10-sammendrag.pdf",
+        originalLenke: "https://www.heraldscotland.com/sport/24531309.shocking-lack-minutes-young-scots-laid-bare-report/"
+      },
+      {
+        id: "bru-11",
+        tittel: "Strategiske endringer i Aberdeen FC sin utviklingsvei for ungdom",
+        temaer: ["Aberdeen FC", "Utviklingsvei", "Utlånsstrategi", "Overgangstrener"],
+        innhold: "Aberdeen FC legger om sin modell for spillerutvikling, med tidligere seniorutlån, daglig A-lagstrening for utvalgte talenter og en ny dedikert overgangstrener som skal bygge bro mellom akademiet og A-laget.",
+        oversettelseLenke: "artikkel-filer/brufaser-11-oversettelse.pdf",
+        sammendragLenke: "artikkel-filer/brufaser-11-sammendrag.pdf",
+        originalLenke: "https://www.afc.co.uk/en/news/strategic-changes-to-aberdeen-fcs-youth-pathway"
       }
     ]
   },
