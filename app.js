@@ -252,6 +252,15 @@ const artikkelData = {
         originalLenke: "https://doi.org/10.1037/a0031958",
         oversettelseLenke: "artikkel-filer/bru-25-oversettelse.pdf",
         sammendragLenke: "artikkel-filer/bru-25-sammendrag.pdf"
+      },
+      {
+        id: "bru-26",
+        tittel: "Ny nøkkel til talentutvikling",
+        temaer: ["Overgang junior–senior", "Mental helse og trivsel", "Talent-transfer mellom idretter", "Dobbel karriere (utdanning og idrett)"],
+        innhold: "Bokutdrag av Henriksen, Larsen og Storm om hvordan talentutvikling må ta mental helse og trivsel like alvorlig som prestasjoner. Tar for seg talent-transfer mellom idretter, fordelene ved dobbel karriere (idrett og utdanning), og hvorfor overgangen fra junior til senior er så kritisk og frafallsutsatt.",
+        originalLenke: "https://pov.international/ny-nogle-til-talentudvikling/",
+        oversettelseLenke: "artikkel-filer/bru-26-oversettelse.pdf",
+        sammendragLenke: "artikkel-filer/bru-26-sammendrag.pdf"
       }
     ]
   },
