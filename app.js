@@ -100,6 +100,51 @@ const artikkelData = {
         oversettelseLenke: "artikkel-filer/brufaser-11-oversettelse.pdf",
         sammendragLenke: "artikkel-filer/brufaser-11-sammendrag.pdf",
         originalLenke: "https://www.afc.co.uk/en/news/strategic-changes-to-aberdeen-fcs-youth-pathway"
+      },
+      {
+        id: "bru-12",
+        tittel: "Stuart Lewis – Tottenham-akademitrener takker for seg når Ipswich-overgang bekreftes",
+        temaer: ["Tottenham Hotspur", "Ipswich Town", "Overgangstrener", "Trenermobilitet"],
+        innhold: "Stuart Lewis forlater sin anerkjente rolle som overgangstrener i Tottenham Hotspur for en førstelagsrolle i Ipswich Town under Gary O'Neil – et eksempel på hvor høyt kompetanse på spilleroverganger verdsettes i engelsk toppfotball.",
+        oversettelseLenke: "artikkel-filer/brufaser-12-oversettelse.pdf",
+        sammendragLenke: "artikkel-filer/brufaser-12-sammendrag.pdf",
+        originalLenke: "https://www.standard.co.uk/sport/football/lewis-tottenham-coach-ipswich-b1290621.html"
+      },
+      {
+        id: "bru-13",
+        tittel: "Overgangen fra akademi til profesjonell fotball (Øyvind Røynesdal, masteroppgave 2015)",
+        temaer: ["Spillerprogresjon", "Førstelagskontekst", "Tilpasningsfaser", "Miljøfaktorer"],
+        innhold: "En masteroppgave som viser at sosiokulturell tilpasningsevne og mental robusthet er like avgjørende som fysiske og tekniske ferdigheter når unge spillere skal etablere seg i førstelagsmiljøet.",
+        oversettelseLenke: "artikkel-filer/brufaser-13-oversettelse.pdf",
+        sammendragLenke: "artikkel-filer/brufaser-13-sammendrag.pdf",
+        originalLenke: "https://www.semanticscholar.org/paper/The-transition-from-academy-to-professional-an-of-a-R%C3%B8ynesdal/0e5d545b9851bcd7fc98f900c916d980338a9b56"
+      },
+      {
+        id: "bru-14",
+        tittel: "Overgangen fra akademifotball til førstelaget (The Football Scholar)",
+        temaer: ["Seniorgarderobe", "Fysisk gap", "Taktisk forståelse", "Mediepress"],
+        innhold: "En praktisk gjennomgang av hva som faktisk kreves for å etablere seg permanent på førstelaget – fysisk intensitet, taktisk forståelse, kommunikasjon og håndtering av økt medieoppmerksomhet.",
+        oversettelseLenke: "artikkel-filer/brufaser-14-oversettelse.pdf",
+        sammendragLenke: "artikkel-filer/brufaser-14-sammendrag.pdf",
+        originalLenke: "https://thefootballscholar.com/transition-from-academy-football-to-first-team/"
+      },
+      {
+        id: "bru-16",
+        tittel: "Ungdom-til-senior-overgangen i europeisk elitefotball (Carpels et al., 2021)",
+        temaer: ["Europeisk toppfotball", "Klubb-utviklede spillere (CTP)", "CIES-data", "Spilletidsstatistikk"],
+        innhold: "En stor statistisk analyse av 12 000 spillere i 31 europeiske ligaer, som dokumenterer at klubbutviklede spillere får stadig mindre spilletid – til tross for en påvist sammenheng mellom egenutvikling og sportslig suksess.",
+        oversettelseLenke: "artikkel-filer/brufaser-16-oversettelse.pdf",
+        sammendragLenke: "artikkel-filer/brufaser-16-sammendrag.pdf",
+        originalLenke: "https://pmc.ncbi.nlm.nih.gov/articles/PMC8758176/"
+      },
+      {
+        id: "bru-17",
+        tittel: "'Du blir slått ned, og du reiser deg opp igjen!' – Alan Tonges doktorgradsarbeid om kritiske øyeblikk i fotball (2021)",
+        temaer: ["Autoetnografi", "Kritiske øyeblikk (Critical moments)", "Idrettsidentitet", "Eksistensiell idrettspsykologi"],
+        innhold: "En dyptgående doktorgradsavhandling som gjennom selvbiografi, intervjuer og en spørreundersøkelse blant 85 tidligere proffspillere avdekker hvor lite støtte spillere opplever ved motgang og karriereslutt i fotball.",
+        oversettelseLenke: "artikkel-filer/brufaser-17-oversettelse.pdf",
+        sammendragLenke: "artikkel-filer/brufaser-17-sammendrag.pdf",
+        originalLenke: "https://researchonline.ljmu.ac.uk/id/eprint/16763/1/2021tongephd.pdf"
       }
     ]
   },
