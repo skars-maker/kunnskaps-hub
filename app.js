@@ -28,6 +28,33 @@ const artikkelData = {
         oversettelseLenke: "artikkel-filer/brufaser-01-oversettelse.pdf",
         sammendragLenke: "artikkel-filer/brufaser-01-sammendrag.pdf",
         originalLenke: "https://4pballer.com/5-reasons-why-most-academy-players-fail-to-make-the-first-team/"
+      },
+      {
+        id: "bru-02",
+        tittel: "En metastudie av kvalitativ forskning på junior-til-senior-overgangen i idrett (Drew et al., 2019)",
+        temaer: ["Forskningssyntese", "Individuelle faktorer", "Kulturell tilpasning", "Karriereoverganger"],
+        innhold: "En omfattende metastudie som samler funn fra 27 kvalitative studier og 261 informanter for å kartlegge hvordan overgangen fra junior til senior i idrett faktisk fungerer, og hvilke faktorer som avgjør om den lykkes.",
+        oversettelseLenke: "artikkel-filer/brufaser-02-oversettelse.pdf",
+        sammendragLenke: "artikkel-filer/brufaser-02-sammendrag.pdf",
+        originalLenke: "https://doi.org/10.1016/j.psychsport.2019.101556"
+      },
+      {
+        id: "bru-03",
+        tittel: "Barrierer og tilretteleggere i junior-til-senior-overgangen i herrefotball – en scoping review (Tomás et al., 2025)",
+        temaer: ["Overgangsbarrierer", "Psykososial belastning", "Organisasjonsstruktur", "Fysiske krav"],
+        innhold: "En systematisk kunnskapsoppsummering (scoping review) av 35 internasjonale studier som kartlegger hva som hemmer og hva som fremmer overgangen fra ungdoms- til eliteseniorfotball for gutter/menn.",
+        oversettelseLenke: "artikkel-filer/brufaser-03-oversettelse.pdf",
+        sammendragLenke: "artikkel-filer/brufaser-03-sammendrag.pdf",
+        originalLenke: "https://www.mdpi.com/2075-4663/13/12/440"
+      },
+      {
+        id: "bru-06",
+        tittel: "Overgangen fra ungdom til senior i idrett: fra teori til praksis (Robert Morris, PhD-avhandling 2013)",
+        temaer: ["Praksisnær teori", "Støtteapparat", "Spillerperspektiv", "Karriereoverganger"],
+        innhold: "En doktoravhandling som gjennom fire delstudier undersøker overgangsfasen fra ungdom til senior i elitefotball, sett fra både spilleres og støtteapparatets perspektiv.",
+        oversettelseLenke: "artikkel-filer/brufaser-06-oversettelse.pdf",
+        sammendragLenke: "artikkel-filer/brufaser-06-sammendrag.pdf",
+        originalLenke: "https://research.aber.ac.uk/en/studentTheses/investigating-the-youth-to-senior-transition-in-sport/"
       }
     ]
   },
