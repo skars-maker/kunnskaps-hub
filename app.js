@@ -282,13 +282,13 @@ const artikkelData = {
     tittel: "Kunnskap om læring",
     artikler: [
       {
-        id: "laer-1",
-        tittel: "Eksempelartikkel: Hvordan vi lærer",
-        temaer: ["Tema 1", "Tema 2", "Tema 3", "Tema 4"],
-        innhold: "Dette er en eksempelartikkel under Kunnskap om læring. Erstatt denne teksten med ditt eget innhold.",
-        oversettelseLenke: "#",
-        sammendragLenke: "#",
-        originalLenke: "#"
+        id: "lae-01",
+        tittel: "Unge talenter er ikke små eliteatleter",
+        temaer: ["Tidlig spesialisering", "Talentidentifikasjon og relativ alderseffekt", "Trivsel og langsiktig utvikling", "Konkurransestruktur for unge utøvere"],
+        innhold: "Kristoffer Henriksen (Team Danmark/SDU) og Peter Jensen (Team Danmark) advarer mot tidlig spesialisering og prestasjonspress i ungdomsidretten, med utgangspunkt i UEFAs planer om en poenggivende U16-landslagsturnering. Viser til forskning på 6 000+ utøvere: fremtidige seniortoppidrettsutøvere har typisk drevet flere idretter i oppveksten og utviklet seg langsommere som unge enn de mest suksessrike ungdomsutøverne.",
+        originalLenke: "https://www.teamdanmark.dk/presse/nyheder/2022/marts/unge-talenter-er-ikke-smaa-eliteatleter",
+        oversettelseLenke: "artikkel-filer/lae-01-oversettelse.pdf",
+        sammendragLenke: "artikkel-filer/lae-01-sammendrag.pdf"
       }
     ]
   }
