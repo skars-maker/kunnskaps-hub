@@ -207,6 +207,15 @@ const artikkelData = {
         originalLenke: "https://www.gamechanger.nu/artikler/niels-lawaetz-pro-opgave-fra-transition-til-stabilisering-talenters-gennembrud-i-dansk-elitefodbold",
         oversettelseLenke: "artikkel-filer/bru-20-oversettelse.pdf",
         sammendragLenke: "artikkel-filer/bru-20-sammendrag.pdf"
+      },
+      {
+        id: "bru-21",
+        tittel: "ECA-rapport: Transisjonen fra akademi til førstelagsfotball",
+        temaer: ["Transisjon ungdom–senior", "Beste praksis og benchmarking", "Transisjonscoaching", "Støttende utviklingsmiljø"],
+        innhold: "European Club Association (ECA) og Football Benchmark har kartlagt hvordan unge spillere i europeisk fotball håndterer overgangen fra akademi til seniornivå. Rapporten ser på hvilke ligaer og klubber som lykkes best med debutanter og overganger, og trekker frem trenerkvalitet og individuell transisjonscoaching som nøkkelfaktorer.",
+        originalLenke: "https://footballbenchmark.com/w/eca-report-released-transition-from-academy-to-first-team-football",
+        oversettelseLenke: "artikkel-filer/bru-21-oversettelse.pdf",
+        sammendragLenke: "artikkel-filer/bru-21-sammendrag.pdf"
       }
     ]
   },
