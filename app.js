@@ -234,6 +234,15 @@ const artikkelData = {
         originalLenke: "https://football-observatory.com/Global-analysis-of-player-loans-3045",
         oversettelseLenke: "artikkel-filer/bru-23-oversettelse.pdf",
         sammendragLenke: "artikkel-filer/bru-23-sammendrag.pdf"
+      },
+      {
+        id: "bru-24",
+        tittel: "«Når du forstår miljøet, kan du navigere overgangen bedre»: Å støtte fotballspillere i overgang til utenlandske klubber",
+        temaer: ["Transisjonsmiljø (transition environment)", "Sportspsykologisk støtte", "Kulturell tilpasning", "Overgang til utenlandsk klubb"],
+        innhold: "Tre sportspsykologer ved University of Southern Denmark beskriver hvordan begrepet «transisjonsmiljø» kan brukes til å støtte fotballspillere som bytter klubb i utlandet — gjennom fasene før overgangen, akutt kulturell tilpasning og sosiokulturell tilpasning.",
+        originalLenke: "artikkel-filer/bru-24-original.pdf",
+        oversettelseLenke: "artikkel-filer/bru-24-oversettelse.pdf",
+        sammendragLenke: "artikkel-filer/bru-24-sammendrag.pdf"
       }
     ]
   },
