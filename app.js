@@ -136,6 +136,15 @@ const artikkelData = {
         oversettelseLenke: "artikkel-filer/brufaser-18-oversettelse.pdf",
         sammendragLenke: "artikkel-filer/brufaser-18-sammendrag.pdf",
         originalLenke: "https://www.semanticscholar.org/paper/From-youth-team-to-first-team%3A-An-investigation-the-Morris-Tod/501748330be1438752f5bb176249901db482db27"
+      },
+      {
+        id: "bru-19",
+        tittel: "Spilleres opplevelse av overgangen fra junior til senior i profesjonell fotball: en longitudinell casestudie (Swainston, Wilson & Jones, 2020)",
+        temaer: ["Longitudinell metode", "Kontraktpress", "Utlån og tilpasning", "Mestring og støtte"],
+        innhold: "En 40 uker lang studie som fulgte tre unge fotballspillere gjennom ukentlige videodagbøker og intervjuer, fra kontraktspresset i akademiet, via utlån, til selve førstelagsfasen — og som viser hvor avgjørende manglende spilletid er for motivasjon, selvtillit og følelse av tilhørighet.",
+        oversettelseLenke: "artikkel-filer/brufaser-19-oversettelse.pdf",
+        sammendragLenke: "artikkel-filer/brufaser-19-sammendrag.pdf",
+        originalLenke: "artikkel-filer/brufaser-19-original.pdf"
       }
     ]
   },
