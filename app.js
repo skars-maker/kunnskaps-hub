@@ -55,6 +55,15 @@ const artikkelData = {
         oversettelseLenke: "artikkel-filer/brufaser-06-oversettelse.pdf",
         sammendragLenke: "artikkel-filer/brufaser-06-sammendrag.pdf",
         originalLenke: "https://research.aber.ac.uk/en/studentTheses/investigating-the-youth-to-senior-transition-in-sport/"
+      },
+      {
+        id: "bru-07",
+        tittel: "Jo Potters trenerteam i Crystal Palace Women bekreftet foran sesongen 2026/27",
+        temaer: ["Kvinneeliteserie (WSL)", "Overgangstrener", "Støtteapparat", "Kulturell integrasjon"],
+        innhold: "Crystal Palace Women har institusjonalisert rollen som overgangstrener på kvinnesiden, ved å utnevne en tidligere lagkaptein til å kombinere støtte til A-laget med ansvar for å integrere unge akademispillere i seniormiljøet.",
+        oversettelseLenke: "artikkel-filer/brufaser-07-oversettelse.pdf",
+        sammendragLenke: "artikkel-filer/brufaser-07-sammendrag.pdf",
+        originalLenke: "https://www.cpfc.co.uk/news/announcement/jo-potters-coaching-staff-confirmed/"
       }
     ]
   },
