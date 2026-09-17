@@ -225,6 +225,15 @@ const artikkelData = {
         originalLenke: "https://ore.exeter.ac.uk/repository/handle/10871/133218",
         oversettelseLenke: "artikkel-filer/bru-22-oversettelse.pdf",
         sammendragLenke: "artikkel-filer/bru-22-sammendrag.pdf"
+      },
+      {
+        id: "bru-23",
+        tittel: "CIES Football Observatory: Global analyse av spillerutlån",
+        temaer: ["Utlån som utviklingsverktøy", "Spilletid og mulighet", "Klubbers strategi og økonomi", "Statistikk og benchmarking"],
+        innhold: "CIES Football Observatory har analysert spillerutlån globalt basert på 1 254 klubber i 75 ligaer. 9,5 % av alle spillere er utlånt, og utlån brukes til mer enn bare talentutvikling — også til å frigjøre plass i troppen, redusere risiko og hente forsterkninger uten overgangssum. De rikeste klubbene dominerer utlånsmarkedet.",
+        originalLenke: "https://football-observatory.com/Global-analysis-of-player-loans-3045",
+        oversettelseLenke: "artikkel-filer/bru-23-oversettelse.pdf",
+        sammendragLenke: "artikkel-filer/bru-23-sammendrag.pdf"
       }
     ]
   },
