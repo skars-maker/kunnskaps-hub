@@ -1,3 +1,56 @@
+// ===== PASSORDBESKYTTELSE =====
+
+const passordSkjerm = document.getElementById("passordSkjerm");
+const dashbordInnhold = document.getElementById("dashbordInnhold");
+const passordFelt = document.getElementById("passordFelt");
+const laasOppKnapp = document.getElementById("laasOppKnapp");
+const passordFeilmelding = document.getElementById("passordFeilmelding");
+
+if (localStorage.getItem("kunnskapshubUlaast") === "ja") {
+  passordSkjerm.style.display = "none";
+  dashbordInnhold.style.display = "block";
+} else {
+  passordSkjerm.style.display = "flex";
+  dashbordInnhold.style.display = "none";
+}
+
+laasOppKnapp.addEventListener("click", sjekkPassord);
+passordFelt.addEventListener("keydown", function (e) {
+  if (e.key === "Enter") sjekkPassord();
+});
+
+async function sjekkPassord() {
+  const passord = passordFelt.value.trim();
+  if (!passord) return;
+
+  passordFeilmelding.textContent = "";
+  laasOppKnapp.disabled = true;
+
+  try {
+    const respons = await fetch("/.netlify/functions/check-password", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ passord: passord })
+    });
+
+    const data = await respons.json();
+
+    if (data.ok) {
+      localStorage.setItem("kunnskapshubUlaast", "ja");
+      passordSkjerm.style.display = "none";
+      dashbordInnhold.style.display = "block";
+    } else {
+      passordFeilmelding.textContent = "Feil passord. Prøv igjen.";
+      passordFelt.value = "";
+      passordFelt.focus();
+    }
+  } catch (feil) {
+    passordFeilmelding.textContent = "Klarte ikke å kontakte serveren. Sjekk internettforbindelsen og prøv igjen.";
+  } finally {
+    laasOppKnapp.disabled = false;
+  }
+}
+
 // ===== ARTIKKELDATA =====
 // Legg til flere artikler ved å kopiere et objekt inni riktig liste.
 // "oversettelse" og "sammendrag" er tekst DU skriver selv - ikke automatisk generert.

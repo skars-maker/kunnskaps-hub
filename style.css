@@ -23,6 +23,74 @@ body {
   line-height: 1.5;
 }
 
+/* Passord-skjerm */
+.passord-skjerm {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gronn-mork);
+  padding: 1.5rem;
+}
+
+.passord-kort {
+  background: var(--krem);
+  border-radius: 6px;
+  padding: 2.2rem 1.8rem;
+  max-width: 320px;
+  width: 100%;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+}
+
+.passord-tittel {
+  font-family: 'Fraunces', serif;
+  font-weight: 600;
+  font-size: 1.7rem;
+  color: var(--gronn-mork);
+  margin: 0 0 0.4rem;
+}
+
+.passord-undertekst {
+  color: var(--tekst-lys);
+  font-size: 0.9rem;
+  margin: 0 0 1.2rem;
+}
+
+.passord-kort input {
+  width: 100%;
+  padding: 0.6rem 0.8rem;
+  border: 1px solid var(--kant);
+  border-radius: 3px;
+  font-family: inherit;
+  font-size: 0.95rem;
+  margin-bottom: 0.8rem;
+}
+
+.passord-kort button {
+  width: 100%;
+  background: var(--gronn-mork);
+  color: var(--hvit);
+  border: none;
+  border-radius: 3px;
+  padding: 0.65rem 1rem;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 0.95rem;
+  cursor: pointer;
+}
+
+.passord-kort button:hover {
+  opacity: 0.9;
+}
+
+.passord-feilmelding {
+  color: #B3261E;
+  font-size: 0.85rem;
+  margin: 0.8rem 0 0;
+  min-height: 1.1em;
+}
+
 .topp {
   background: var(--gronn-mork);
   color: var(--hvit);

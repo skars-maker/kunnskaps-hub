@@ -8,6 +8,19 @@
 </head>
 <body>
 
+<!-- Passord-skjerm (vises til riktig passord er tastet inn) -->
+<div class="passord-skjerm" id="passordSkjerm">
+  <div class="passord-kort">
+    <h1 class="passord-tittel">Kunnskapshub</h1>
+    <p class="passord-undertekst">Skriv inn passordet for å få tilgang</p>
+    <input type="password" id="passordFelt" placeholder="Passord" autocomplete="current-password">
+    <button id="laasOppKnapp">Lås opp</button>
+    <p class="passord-feilmelding" id="passordFeilmelding"></p>
+  </div>
+</div>
+
+<div id="dashbordInnhold" style="display:none;">
+
 <header class="topp">
   <h1>Kunnskapshub</h1>
   <p class="undertekst">Kunnskap og verktøy for deltakere i fagprogrammet</p>
@@ -72,6 +85,8 @@
   </section>
 
 </main>
+
+</div>
 
 <script src="app.js"></script>
 </body>
