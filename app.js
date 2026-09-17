@@ -279,6 +279,15 @@ const artikkelData = {
         originalLenke: "artikkel-filer/bru-28-original.pdf",
         oversettelseLenke: "artikkel-filer/bru-28-oversettelse.pdf",
         sammendragLenke: "artikkel-filer/bru-28-sammendrag.pdf"
+      },
+      {
+        id: "bru-29",
+        tittel: "Karriereutvikling og overganger hos idrettsutøvere: ISSPs posisjonsdokument revidert",
+        temaer: ["Karriereutvikling i idrett", "Dobbel karriere (utdanning og idrett)", "Kulturell overgang og migrasjon", "Krisetransisjoner og psykisk helse"],
+        innhold: "Oppdatert posisjonsdokument fra Det internasjonale selskapet for idrettspsykologi (ISSP) som oppsummerer et tiår med forskning på idrettskarrierer. Dekker junior-senior-overgangen som en fase-basert prosess, dobbeltkarriere, kulturelle overganger, og innfører begrepet «idrettslig karriereeksellens» der psykisk helse forstås som både ressurs og mål.",
+        originalLenke: "artikkel-filer/bru-29-original.pdf",
+        oversettelseLenke: "artikkel-filer/bru-29-oversettelse.pdf",
+        sammendragLenke: "artikkel-filer/bru-29-sammendrag.pdf"
       }
     ]
   },
