@@ -261,6 +261,15 @@ const artikkelData = {
         originalLenke: "https://pov.international/ny-nogle-til-talentudvikling/",
         oversettelseLenke: "artikkel-filer/bru-26-oversettelse.pdf",
         sammendragLenke: "artikkel-filer/bru-26-sammendrag.pdf"
+      },
+      {
+        id: "bru-27",
+        tittel: "Overgangsopplevelser og foreldrestøtte i et norsk profesjonelt fotballakademi",
+        temaer: ["Transisjon ungdom–senior", "Foreldrestøtte", "Overgang inn og ut av akademi", "Realistiske ambisjoner"],
+        innhold: "Norsk studie av fem tidligere juniorspillere i et profesjonelt fotballakademi og deres foreldre. Foreldrestøtte fremstår som en tveegget kniv: nødvendig og verdsatt av spillerne, men med risiko for å skape utilsiktet press. Overgangen ut av akademiet oppleves ofte som lettere enn ventet, fordi ambisjonene gradvis justeres ned.",
+        originalLenke: "artikkel-filer/bru-27-original.pdf",
+        oversettelseLenke: "artikkel-filer/bru-27-oversettelse.pdf",
+        sammendragLenke: "artikkel-filer/bru-27-sammendrag.pdf"
       }
     ]
   },
