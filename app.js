@@ -198,6 +198,15 @@ const artikkelData = {
         oversettelseLenke: "artikkel-filer/brufaser-19-oversettelse.pdf",
         sammendragLenke: "artikkel-filer/brufaser-19-sammendrag.pdf",
         originalLenke: "artikkel-filer/brufaser-19-original.pdf"
+      },
+      {
+        id: "bru-20",
+        tittel: "Niels Lawaetz' Pro-oppgave: Fra transisjon til stabilisering – talenters gjennombrudd i dansk elitefotball",
+        temaer: ["Transisjon ungdom–senior", "Spilletid/kampminutter", "Klubbstruktur og støtte", "Forventningsavstemming"],
+        innhold: "Niels Lawaetz' Pro-oppgave undersøker hvorfor overgangen fra akademi til stabil seniorspiller ofte er den vanskeligste delen av talentutviklingen. Basert på teori, spilleminutt-data og intervjuer med seks transisjonstrenere fra dansk toppfotball.",
+        originalLenke: "https://www.gamechanger.nu/artikler/niels-lawaetz-pro-opgave-fra-transition-til-stabilisering-talenters-gennembrud-i-dansk-elitefodbold",
+        oversettelseLenke: "artikkel-filer/bru-20-oversettelse.pdf",
+        sammendragLenke: "artikkel-filer/bru-20-sammendrag.pdf"
       }
     ]
   },
