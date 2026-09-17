@@ -57,22 +57,13 @@ const artikkelData = {
         originalLenke: "https://research.aber.ac.uk/en/studentTheses/investigating-the-youth-to-senior-transition-in-sport/"
       },
       {
-        id: "bru-07",
-        tittel: "Jo Potters trenerteam i Crystal Palace Women bekreftet foran sesongen 2026/27",
-        temaer: ["Kvinneeliteserie (WSL)", "Overgangstrener", "Støtteapparat", "Kulturell integrasjon"],
-        innhold: "Crystal Palace Women har institusjonalisert rollen som overgangstrener på kvinnesiden, ved å utnevne en tidligere lagkaptein til å kombinere støtte til A-laget med ansvar for å integrere unge akademispillere i seniormiljøet.",
-        oversettelseLenke: "artikkel-filer/brufaser-07-oversettelse.pdf",
-        sammendragLenke: "artikkel-filer/brufaser-07-sammendrag.pdf",
-        originalLenke: "https://www.cpfc.co.uk/news/announcement/jo-potters-coaching-staff-confirmed/"
-      },
-      {
         id: "bru-08",
         tittel: "Overgangen fra akademi til seniornivå i elitefotball: en akademisk og praktisk utredning",
         temaer: ["Overgangstrener", "Akademiklassifisering", "Wyllemans modell", "Sosiokulturelt kultursjokk"],
         innhold: "En grundig syntese av internasjonal forskning og praktisk erfaring om overgangsfasen i elitefotball, som blant annet ser på CIES-tall for klubbutviklede spillere, Wyllemans og Stambulovas teoretiske modeller, og hvorfor rollen som overgangstrener har blitt stadig viktigere.",
         oversettelseLenke: "artikkel-filer/brufaser-08-oversettelse.pdf",
         sammendragLenke: "artikkel-filer/brufaser-08-sammendrag.pdf",
-        originalLenke: "#"
+        originalLenke: "artikkel-filer/brufaser-08-original.pdf"
       },
       {
         id: "bru-09",
@@ -100,15 +91,6 @@ const artikkelData = {
         oversettelseLenke: "artikkel-filer/brufaser-11-oversettelse.pdf",
         sammendragLenke: "artikkel-filer/brufaser-11-sammendrag.pdf",
         originalLenke: "https://www.afc.co.uk/en/news/strategic-changes-to-aberdeen-fcs-youth-pathway"
-      },
-      {
-        id: "bru-12",
-        tittel: "Stuart Lewis – Tottenham-akademitrener takker for seg når Ipswich-overgang bekreftes",
-        temaer: ["Tottenham Hotspur", "Ipswich Town", "Overgangstrener", "Trenermobilitet"],
-        innhold: "Stuart Lewis forlater sin anerkjente rolle som overgangstrener i Tottenham Hotspur for en førstelagsrolle i Ipswich Town under Gary O'Neil – et eksempel på hvor høyt kompetanse på spilleroverganger verdsettes i engelsk toppfotball.",
-        oversettelseLenke: "artikkel-filer/brufaser-12-oversettelse.pdf",
-        sammendragLenke: "artikkel-filer/brufaser-12-sammendrag.pdf",
-        originalLenke: "https://www.standard.co.uk/sport/football/lewis-tottenham-coach-ipswich-b1290621.html"
       },
       {
         id: "bru-13",
