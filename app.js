@@ -243,6 +243,15 @@ const artikkelData = {
         originalLenke: "artikkel-filer/bru-24-original.pdf",
         oversettelseLenke: "artikkel-filer/bru-24-oversettelse.pdf",
         sammendragLenke: "artikkel-filer/bru-24-sammendrag.pdf"
+      },
+      {
+        id: "bru-25",
+        tittel: "Vellykket talentutvikling i fotball: Kjennetegn ved miljøet (AGF-studien)",
+        temaer: ["Talentutviklingsmiljø (ATDE)", "Organisasjonskultur og familiefølelse", "Barrierer i overgangen til proff", "Helhetlig tilnærming til spillerutvikling"],
+        innhold: "Casestudie av U17-miljøet i en dansk fotballklubb (AGF) identifiserer fire kulturelle kjennetegn ved et vellykket talentutviklingsmiljø: sterk familiefølelse, vekt på arbeidskapasitet fremfor rått talent, fokus på spillerutdanning, og en helhetlig tilnærming. Studien peker samtidig på manglende kommunikasjon og struktur mellom ungdoms- og seniorapparatet som en sentral barriere i overgangen til proff.",
+        originalLenke: "https://doi.org/10.1037/a0031958",
+        oversettelseLenke: "artikkel-filer/bru-25-oversettelse.pdf",
+        sammendragLenke: "artikkel-filer/bru-25-sammendrag.pdf"
       }
     ]
   },
