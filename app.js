@@ -213,7 +213,7 @@ const artikkelData = {
         tittel: "ECA-rapport: Transisjonen fra akademi til førstelagsfotball",
         temaer: ["Transisjon ungdom–senior", "Beste praksis og benchmarking", "Transisjonscoaching", "Støttende utviklingsmiljø"],
         innhold: "European Club Association (ECA) og Football Benchmark har kartlagt hvordan unge spillere i europeisk fotball håndterer overgangen fra akademi til seniornivå. Rapporten ser på hvilke ligaer og klubber som lykkes best med debutanter og overganger, og trekker frem trenerkvalitet og individuell transisjonscoaching som nøkkelfaktorer.",
-        originalLenke: "https://ecaeurope.com/media/6555/eca-transition-from-academy-to-first-team-football.pdf",
+        originalLenke: "artikkel-filer/bru-21-original.pdf",
         oversettelseLenke: "artikkel-filer/bru-21-oversettelse.pdf",
         sammendragLenke: "artikkel-filer/bru-21-sammendrag.pdf"
       },
