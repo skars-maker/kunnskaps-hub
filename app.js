@@ -341,6 +341,30 @@ tilbakeKnapp.addEventListener("click", function () {
   omraderSeksjon.style.display = "grid";
 });
 
+// ===== LEST-STATUS (huskes lokalt i nettleseren) =====
+
+const LESTE_ARTIKLER_NOKKEL = "kunnskapshubLesteArtikler";
+
+function hentLesteArtikler() {
+  try {
+    const lagret = JSON.parse(localStorage.getItem(LESTE_ARTIKLER_NOKKEL));
+    return Array.isArray(lagret) ? lagret : [];
+  } catch (feil) {
+    return [];
+  }
+}
+
+function settArtikkelLest(id, lest) {
+  const liste = hentLesteArtikler();
+  const indeks = liste.indexOf(id);
+  if (lest && indeks === -1) {
+    liste.push(id);
+  } else if (!lest && indeks !== -1) {
+    liste.splice(indeks, 1);
+  }
+  localStorage.setItem(LESTE_ARTIKLER_NOKKEL, JSON.stringify(liste));
+}
+
 function visArtikler(omradeId) {
   const omrade = artikkelData[omradeId];
   if (!omrade) return;
@@ -348,9 +372,17 @@ function visArtikler(omradeId) {
   artikkelOmradeTittel.textContent = omrade.tittel;
   artikkelListe.innerHTML = "";
 
-  omrade.artikler.forEach(function (artikkel) {
+  const lesteArtikler = hentLesteArtikler();
+  const uleste = omrade.artikler.filter(function (a) { return lesteArtikler.indexOf(a.id) === -1; });
+  const leste = omrade.artikler
+    .filter(function (a) { return lesteArtikler.indexOf(a.id) !== -1; })
+    .sort(function (a, b) { return lesteArtikler.indexOf(a.id) - lesteArtikler.indexOf(b.id); });
+  const sortertArtikler = uleste.concat(leste);
+
+  sortertArtikler.forEach(function (artikkel) {
+    const erLest = lesteArtikler.indexOf(artikkel.id) !== -1;
     const kort = document.createElement("div");
-    kort.className = "artikkel-kort";
+    kort.className = "artikkel-kort" + (erLest ? " artikkel-lest" : "");
     const temaerHtml = (artikkel.temaer || [])
       .map(function (tema) { return "<span class='tema-tag'>" + tema + "</span>"; })
       .join("");
@@ -362,8 +394,19 @@ function visArtikler(omradeId) {
         "<a class='artikkel-knapp' href='" + artikkel.oversettelseLenke + "' target='_blank' rel='noopener'>Sammendrag</a>" +
         "<a class='artikkel-knapp' href='" + artikkel.sammendragLenke + "' target='_blank' rel='noopener'>Bullet</a>" +
         "<a class='artikkel-knapp' href='" + artikkel.originalLenke + "' target='_blank' rel='noopener'>Original</a>" +
-      "</div>";
+      "</div>" +
+      "<label class='lest-etikett'>" +
+        "<input type='checkbox' class='lest-avkrysning' data-id='" + artikkel.id + "'" + (erLest ? " checked" : "") + ">" +
+        "Lest" +
+      "</label>";
     artikkelListe.appendChild(kort);
+  });
+
+  artikkelListe.querySelectorAll(".lest-avkrysning").forEach(function (boks) {
+    boks.addEventListener("change", function () {
+      settArtikkelLest(boks.getAttribute("data-id"), boks.checked);
+      visArtikler(omradeId);
+    });
   });
 
   omraderSeksjon.style.display = "none";
