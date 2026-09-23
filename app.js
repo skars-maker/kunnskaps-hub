@@ -359,8 +359,8 @@ function visArtikler(omradeId) {
       "<div class='artikkel-temaer'>" + temaerHtml + "</div>" +
       "<p class='artikkel-tekst'>" + artikkel.innhold + "</p>" +
       "<div class='artikkel-knapper'>" +
-        "<a class='artikkel-knapp' href='" + artikkel.oversettelseLenke + "' target='_blank' rel='noopener'>Oversett</a>" +
-        "<a class='artikkel-knapp' href='" + artikkel.sammendragLenke + "' target='_blank' rel='noopener'>Sammendrag</a>" +
+        "<a class='artikkel-knapp' href='" + artikkel.oversettelseLenke + "' target='_blank' rel='noopener'>Sammendrag</a>" +
+        "<a class='artikkel-knapp' href='" + artikkel.sammendragLenke + "' target='_blank' rel='noopener'>Bullet</a>" +
         "<a class='artikkel-knapp' href='" + artikkel.originalLenke + "' target='_blank' rel='noopener'>Original</a>" +
       "</div>";
     artikkelListe.appendChild(kort);
