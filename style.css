@@ -340,6 +340,18 @@ main {
   border-color: var(--gronn-lys);
 }
 
+.artikkel-knapp-original {
+  background: #FBF1DE;
+  border-color: #E4C77D;
+  color: #8A6D1E;
+}
+
+.artikkel-knapp-original:hover {
+  background: var(--gull);
+  color: var(--hvit);
+  border-color: var(--gull);
+}
+
 /* Chat-seksjon */
 .chat-seksjon {
   background: var(--hvit);

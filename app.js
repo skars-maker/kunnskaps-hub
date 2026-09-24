@@ -393,7 +393,7 @@ function visArtikler(omradeId) {
       "<div class='artikkel-knapper'>" +
         "<a class='artikkel-knapp' href='" + artikkel.oversettelseLenke + "' target='_blank' rel='noopener'>Sammendrag</a>" +
         "<a class='artikkel-knapp' href='" + artikkel.sammendragLenke + "' target='_blank' rel='noopener'>Bullet</a>" +
-        "<a class='artikkel-knapp' href='" + artikkel.originalLenke + "' target='_blank' rel='noopener'>Original</a>" +
+        "<a class='artikkel-knapp artikkel-knapp-original' href='" + artikkel.originalLenke + "' target='_blank' rel='noopener'>Original</a>" +
       "</div>" +
       "<label class='lest-etikett'>" +
         "<input type='checkbox' class='lest-avkrysning' data-id='" + artikkel.id + "'" + (erLest ? " checked" : "") + ">" +
