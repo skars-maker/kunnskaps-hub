@@ -21,33 +21,44 @@
 
 <div id="dashbordInnhold" style="display:none;">
 
-<header class="topp">
-  <h1>Kunnskapshub</h1>
-  <p class="undertekst">Kunnskap og verktøy for deltakere i fagprogrammet</p>
-  <button class="innstillinger-knapp" id="ressurserKnapp">📁 Ressurser</button>
-</header>
+<div class="dashbord-flyt" id="dashbordFlyt">
+
+<!-- Stadion-bilde med klikkbare soner og chat oppå (erstatter topptekst og boks-grid) -->
+<section class="stadion" id="stadion">
+  <img class="stadion-bilde" src="bilder/dashboard-stadion.jpg" alt="Kunnskapshub – stadion med Kunnskap om læring, Day2Day, Ressurser, Brufaser og Referanser">
+
+  <!-- Usynlige, klikkbare soner (prosent av bildets bredde/høyde) -->
+  <button class="stadion-sone" data-omrade="laering" aria-label="Kunnskap om læring" style="left:6.19%; top:34.78%; width:16.81%; height:21.33%;"></button>
+  <button class="stadion-sone" data-omrade="day2day" aria-label="Day2Day" style="left:25.06%; top:18.33%; width:14.75%; height:17.11%;"></button>
+  <button class="stadion-sone" data-omrade="brufaser" aria-label="Brufaser" style="left:60.75%; top:18.33%; width:14.81%; height:17.11%;"></button>
+  <button class="stadion-sone" data-omrade="referanser" aria-label="Referanser" style="left:79.31%; top:34.78%; width:16.81%; height:21.33%;"></button>
+  <button class="stadion-sone" id="ressurserKnapp" aria-label="Ressurser" style="left:40.19%; top:34.22%; width:20.56%; height:26.78%;"></button>
+
+  <!-- Chatbot-seksjon (ligger oppå bildet, i 16-meteren) -->
+  <div class="chat-plassering">
+    <section class="chat-seksjon" id="chatSeksjon">
+      <div class="chat-topptekst">
+        <h2>Spør Kunnskapshub</h2>
+        <button class="tom-knapp" id="tomSporsmalKnapp">Tøm spørsmålsliste</button>
+      </div>
+
+      <div class="foreslatte-sporsmal" id="foreslatteSporsmal">
+        <!-- 4 spørsmålsforslag fylles inn av app.js -->
+      </div>
+
+      <div class="chat-vindu" id="chatVindu">
+        <!-- Meldinger vises her -->
+      </div>
+
+      <div class="chat-inntasting">
+        <input type="text" id="chatInput" placeholder="Skriv et spørsmål...">
+        <button id="sendKnapp">Send</button>
+      </div>
+    </section>
+  </div>
+</section>
 
 <main>
-
-  <!-- De 4 hovedområdene -->
-  <section class="omrader" id="omrader">
-    <button class="omrade-kort" data-omrade="day2day">
-      <span class="omrade-ikon">📅</span>
-      <span class="omrade-tittel">Day2Day</span>
-    </button>
-    <button class="omrade-kort" data-omrade="brufaser">
-      <span class="omrade-ikon">🌉</span>
-      <span class="omrade-tittel">Brufaser</span>
-    </button>
-    <button class="omrade-kort" data-omrade="referanser">
-      <span class="omrade-ikon">📚</span>
-      <span class="omrade-tittel">Referanser</span>
-    </button>
-    <button class="omrade-kort" data-omrade="laering">
-      <span class="omrade-ikon">🧠</span>
-      <span class="omrade-tittel">Kunnskap om læring</span>
-    </button>
-  </section>
 
   <!-- Artikkelvisning (vises når man klikker på et område) -->
   <section class="artikkel-visning" id="artikkelVisning" style="display:none;">
@@ -55,7 +66,7 @@
     <h2 id="artikkelOmradeTittel"></h2>
     <div id="artikkelListe"></div>
   </section>
-  
+
   <!-- Ressursvisning -->
   <section class="artikkel-visning" id="ressurserVisning" style="display:none;">
     <button class="tilbake-knapp" id="tilbakeFraRessurserKnapp">← Tilbake til dashboard</button>
@@ -63,28 +74,9 @@
     <div id="ressursListe"></div>
   </section>
 
-  <!-- Chatbot-seksjon -->
-  <section class="chat-seksjon" id="chatSeksjon">
-    <div class="chat-topptekst">
-      <h2>Spør Kunnskapshub</h2>
-      <button class="tom-knapp" id="tomSporsmalKnapp">Tøm spørsmålsliste</button>
-    </div>
-
-    <div class="foreslatte-sporsmal" id="foreslatteSporsmal">
-      <!-- 4 spørsmålsforslag fylles inn av app.js -->
-    </div>
-
-    <div class="chat-vindu" id="chatVindu">
-      <!-- Meldinger vises her -->
-    </div>
-
-    <div class="chat-inntasting">
-      <input type="text" id="chatInput" placeholder="Skriv et spørsmål...">
-      <button id="sendKnapp">Send</button>
-    </div>
-  </section>
-
 </main>
+
+</div>
 
 </div>
 

@@ -323,13 +323,23 @@ const artikkelData = {
 
 // ===== DASHBOARD-NAVIGASJON =====
 
-const omraderSeksjon = document.getElementById("omrader");
+const dashbordFlyt = document.getElementById("dashbordFlyt");
+
+// Skjuler stadion-bildet og viser artikkel-/ressursvisning (chatten flyttes under)
+function visInnholdsvisning() {
+  dashbordFlyt.classList.add("viser-innhold");
+  window.scrollTo(0, 0);
+}
+
+function visStadion() {
+  dashbordFlyt.classList.remove("viser-innhold");
+}
 const artikkelVisning = document.getElementById("artikkelVisning");
 const artikkelOmradeTittel = document.getElementById("artikkelOmradeTittel");
 const artikkelListe = document.getElementById("artikkelListe");
 const tilbakeKnapp = document.getElementById("tilbakeKnapp");
 
-document.querySelectorAll(".omrade-kort").forEach(function (kort) {
+document.querySelectorAll(".stadion-sone[data-omrade]").forEach(function (kort) {
   kort.addEventListener("click", function () {
     const omradeId = kort.getAttribute("data-omrade");
     visArtikler(omradeId);
@@ -338,7 +348,7 @@ document.querySelectorAll(".omrade-kort").forEach(function (kort) {
 
 tilbakeKnapp.addEventListener("click", function () {
   artikkelVisning.style.display = "none";
-  omraderSeksjon.style.display = "grid";
+  visStadion();
 });
 
 // ===== LEST-STATUS (huskes lokalt i nettleseren) =====
@@ -409,7 +419,7 @@ function visArtikler(omradeId) {
     });
   });
 
-  omraderSeksjon.style.display = "none";
+  visInnholdsvisning();
   artikkelVisning.style.display = "block";
 }
 
@@ -437,7 +447,7 @@ ressurserKnapp.addEventListener("click", function () {
 
 tilbakeFraRessurserKnapp.addEventListener("click", function () {
   ressurserVisning.style.display = "none";
-  omraderSeksjon.style.display = "grid";
+  visStadion();
 });
 
 function visRessurser() {
@@ -455,7 +465,7 @@ function visRessurser() {
     ressursListe.appendChild(kort);
   });
 
-  omraderSeksjon.style.display = "none";
+  visInnholdsvisning();
   ressurserVisning.style.display = "block";
 }
 
