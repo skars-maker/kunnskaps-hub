@@ -327,6 +327,7 @@ const dashbordFlyt = document.getElementById("dashbordFlyt");
 
 // Skjuler stadion-bildet og viser artikkel-/ressursvisning (chatten flyttes under)
 function visInnholdsvisning() {
+  if (dashbordFlyt.classList.contains("viser-innhold")) return;
   dashbordFlyt.classList.add("viser-innhold");
   window.scrollTo(0, 0);
 }
@@ -334,6 +335,7 @@ function visInnholdsvisning() {
 function visStadion() {
   dashbordFlyt.classList.remove("viser-innhold");
 }
+
 const artikkelVisning = document.getElementById("artikkelVisning");
 const artikkelOmradeTittel = document.getElementById("artikkelOmradeTittel");
 const artikkelListe = document.getElementById("artikkelListe");
@@ -393,6 +395,7 @@ function visArtikler(omradeId) {
     const erLest = lesteArtikler.indexOf(artikkel.id) !== -1;
     const kort = document.createElement("div");
     kort.className = "artikkel-kort" + (erLest ? " artikkel-lest" : "");
+    kort.setAttribute("data-id", artikkel.id);
     const temaerHtml = (artikkel.temaer || [])
       .map(function (tema) { return "<span class='tema-tag'>" + tema + "</span>"; })
       .join("");
@@ -420,7 +423,30 @@ function visArtikler(omradeId) {
   });
 
   visInnholdsvisning();
+  ressurserVisning.style.display = "none";
   artikkelVisning.style.display = "block";
+}
+
+// Åpner området artikkelen ligger i, og scroller til (og markerer) artikkelkortet
+function visArtikkel(artikkelId) {
+  const funn = finnArtikkel(artikkelId);
+  if (!funn) return;
+
+  visArtikler(funn.omradeId);
+
+  const kort = artikkelListe.querySelector(".artikkel-kort[data-id='" + artikkelId + "']");
+  if (!kort) return;
+  kort.scrollIntoView({ block: "center" });
+  kort.classList.add("artikkel-markert");
+  setTimeout(function () { kort.classList.remove("artikkel-markert"); }, 2500);
+}
+
+function finnArtikkel(artikkelId) {
+  for (const omradeId in artikkelData) {
+    const artikkel = artikkelData[omradeId].artikler.find(function (a) { return a.id === artikkelId; });
+    if (artikkel) return { omradeId: omradeId, artikkel: artikkel };
+  }
+  return null;
 }
 
 // ===== RESSURSER =====
@@ -466,6 +492,7 @@ function visRessurser() {
   });
 
   visInnholdsvisning();
+  artikkelVisning.style.display = "none";
   ressurserVisning.style.display = "block";
 }
 
@@ -477,7 +504,9 @@ function samleAltInnhold() {
     const omrade = artikkelData[omradeId];
     tekst += "\n\n=== " + omrade.tittel + " ===\n";
     omrade.artikler.forEach(function (artikkel) {
-      tekst += "\n" + artikkel.tittel + "\n" + artikkel.innhold + "\n";
+      tekst += "\n[id: " + artikkel.id + "] " + artikkel.tittel + "\n" +
+        "Temaer: " + (artikkel.temaer || []).join(", ") + "\n" +
+        artikkel.innhold + "\n";
     });
   }
   return tekst;
@@ -500,6 +529,7 @@ function visForeslatteSporsmal(listeMedSporsmal) {
     const knapp = document.createElement("button");
     knapp.className = "sporsmal-chip";
     knapp.textContent = sporsmal;
+    knapp.title = sporsmal;
     knapp.addEventListener("click", function () {
       document.getElementById("chatInput").value = sporsmal;
       document.getElementById("chatInput").focus();
@@ -558,8 +588,17 @@ async function sporMistral(sporsmal, lasterId) {
   const systemPrompt =
     "Du er en kunnskapsassistent for Kunnskapshub, et fagprogram for utvikling i fotballklubber. " +
     "Svar kun basert på innholdet under, kort og presist, på norsk. Hvis svaret ikke finnes i innholdet, si det tydelig. " +
-    "Etter svaret ditt, skriv nøyaktig linjen ---SPORSMAL--- og deretter 4 korte oppfølgingsspørsmål brukeren kan stille videre, ett per linje, uten nummerering.\n\n" +
-    "INNHOLD:" + innhold;
+    "Hver artikkel i innholdet starter med [id: ...].\n\n" +
+    "INNHOLD:" + innhold + "\n\n" +
+    "SVARFORMAT (følg dette nøyaktig, i denne rekkefølgen):\n" +
+    "1. Selve svaret. Ikke nevn artikkel-id-er i svaret.\n" +
+    "2. En egen linje som starter med ANBEFALT: og deretter id-ene til de 1–3 artiklene i innholdet som er mest relevante for spørsmålet, adskilt med komma. " +
+    "Anbefal bare artikler som faktisk handler om det brukeren spør om. Finnes det ingen klart relevant artikkel, skriv ANBEFALT: ingen. Denne linjen skal alltid være med.\n" +
+    "3. Linjen ---SPORSMAL--- og deretter 4 korte oppfølgingsspørsmål brukeren kan stille videre, ett per linje, uten nummerering.\n\n" +
+    "Eksempel på avslutning:\n" +
+    "ANBEFALT: bru-09, bru-19\n" +
+    "---SPORSMAL---\n" +
+    "Spørsmål 1\nSpørsmål 2\nSpørsmål 3\nSpørsmål 4";
 
   try {
     const respons = await fetch("/.netlify/functions/mistral-chat", {
@@ -575,11 +614,17 @@ async function sporMistral(sporsmal, lasterId) {
       return;
     }
 
-    const fullTekst = data.choices[0].message.content;
+    let fullTekst = data.choices[0].message.content;
 
-    const deler = fullTekst.split(/-*\s*SP[ØO]RSM[ÅA]L\s*-*/i);
+    // Plukk ut ANBEFALT-linjen (vises aldri rått til brukeren)
+    const anbefaltTreff = fullTekst.match(ANBEFALT_LINJE);
+    const anbefalteIder = anbefaltTreff ? tolkAnbefalinger(anbefaltTreff[1]) : [];
+    fullTekst = fullTekst.replace(ANBEFALT_LINJE, "");
+
+    const deler = fullTekst.split(/^[\s*_-]*SP[ØO]RSM[ÅA]L[\s*_:-]*$/im);
     const svarTekst = deler[0].trim();
     oppdaterMelding(lasterId, svarTekst);
+    visAnbefalinger(lasterId, anbefalteIder);
 
     if (deler[1]) {
       const nyeSporsmal = deler[1]
@@ -593,6 +638,43 @@ async function sporMistral(sporsmal, lasterId) {
   } catch (feil) {
     oppdaterMelding(lasterId, "Klarte ikke å kontakte chatboten. Sjekk internettforbindelsen og prøv igjen.");
   }
+}
+
+// ===== ARTIKKELANBEFALINGER FRA CHATBOTEN =====
+
+// Linjen "ANBEFALT: bru-19, bru-22" (tåler markdown-stjerner og mellomrom rundt)
+const ANBEFALT_LINJE = /^[\s*_]*ANBEFALT[\s*_]*:[\s*_]*(.*)$/im;
+
+// Gjør linjen om til gyldige artikkel-id-er (maks 3). Ukjente id-er og "ingen" ignoreres.
+function tolkAnbefalinger(linje) {
+  const ider = [];
+  (linje.match(/[a-zæøå]+-\d+/gi) || []).forEach(function (id) {
+    id = id.toLowerCase();
+    if (finnArtikkel(id) && ider.indexOf(id) === -1) ider.push(id);
+  });
+  return ider.slice(0, 3);
+}
+
+function visAnbefalinger(meldingId, ider) {
+  const melding = document.getElementById(meldingId);
+  if (!melding || ider.length === 0) return;
+
+  const boks = document.createElement("div");
+  boks.className = "anbefalinger";
+  boks.innerHTML = "<span class='anbefalinger-etikett'>Anbefalte artikler:</span>";
+
+  ider.forEach(function (id) {
+    const knapp = document.createElement("button");
+    knapp.className = "anbefaling-chip";
+    knapp.textContent = "📄 " + finnArtikkel(id).artikkel.tittel;
+    knapp.addEventListener("click", function () {
+      visArtikkel(id);
+    });
+    boks.appendChild(knapp);
+  });
+
+  melding.after(boks);
+  chatVindu.scrollTop = chatVindu.scrollHeight;
 }
 
 function oppdaterMelding(id, nyTekst) {
