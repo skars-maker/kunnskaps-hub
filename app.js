@@ -594,7 +594,7 @@ async function sporMistral(sporsmal, lasterId) {
     "1. Selve svaret. Ikke nevn artikkel-id-er i svaret.\n" +
     "2. En egen linje som starter med ANBEFALT: og deretter id-ene til de 1–3 artiklene i innholdet som er mest relevante for spørsmålet, adskilt med komma. " +
     "Anbefal bare artikler som faktisk handler om det brukeren spør om. Finnes det ingen klart relevant artikkel, skriv ANBEFALT: ingen. Denne linjen skal alltid være med.\n" +
-    "3. Linjen ---SPORSMAL--- og deretter 4 korte oppfølgingsspørsmål brukeren kan stille videre, ett per linje, uten nummerering.\n\n" +
+    "3. Linjen ---SPORSMAL--- og deretter 4 korte oppfølgingsspørsmål (maks 12 ord hver) brukeren kan stille videre, ett per linje, uten nummerering.\n\n" +
     "Eksempel på avslutning:\n" +
     "ANBEFALT: bru-09, bru-19\n" +
     "---SPORSMAL---\n" +

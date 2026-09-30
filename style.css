@@ -219,41 +219,33 @@ main {
   box-shadow: 0 8px 30px rgba(0, 0, 0, 0.35);
 }
 
+/* Ved ekstremt lange forslag på lave skjermer scroller forslagsraden i stedet for
+   å dytte input-feltet ut av chatboksen */
 .chat-plassering .foreslatte-sporsmal {
   grid-template-columns: repeat(4, 1fr);
   margin: 0.6rem 0;
+  max-height: 42%;
+  overflow-y: auto;
+  flex-shrink: 0;
 }
 
-/* Maks to linjer per spørsmålsforslag, så meldingsvinduet beholder plassen sin */
+/* Spørsmålsforslagene viser hele teksten (brytes over flere linjer);
+   alle fire får samme høyde fordi de står i samme rad i rutenettet */
 .chat-plassering .sporsmal-chip {
-  display: -webkit-box;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp: 2;
-  line-clamp: 2;
-  overflow: hidden;
+  line-height: 1.3;
+  padding: 0.45rem 0.7rem;
 }
 
-/* Lave skjermer (f.eks. 1280×720): ett linje per forslag og litt mindre tittel */
+/* Lave skjermer (f.eks. 1280×720): litt mindre tittel */
 @media (max-height: 820px) {
-  .chat-plassering .sporsmal-chip {
-    -webkit-line-clamp: 1;
-    line-clamp: 1;
-  }
-
   .chat-plassering .chat-seksjon h2 {
-    font-size: 1.4rem;
+    font-size: 1.15rem;
   }
-}
-
-.viser-innhold .sporsmal-chip {
-  display: block;
-  -webkit-line-clamp: unset;
-  line-clamp: unset;
 }
 
 .chat-plassering .chat-vindu {
   flex: 1;
-  min-height: 0;
+  min-height: 2.5rem;
   max-height: none;
   margin-bottom: 0.6rem;
 }
@@ -443,7 +435,7 @@ main {
   font-family: 'Fraunces', serif;
   color: var(--gronn-mork);
   margin-top: 0;
-  font-size: 1.7rem;
+  font-size: 1.36rem;
 }
 
 .chat-topptekst {
@@ -464,7 +456,7 @@ main {
   border-radius: 3px;
   color: var(--tekst-lys);
   font-family: inherit;
-  font-size: 1.01rem;
+  font-size: 0.81rem;
   padding: 0.4rem 0.8rem;
   cursor: pointer;
 }
@@ -486,7 +478,7 @@ main {
   border: 1px solid var(--kant);
   border-radius: 3px;
   padding: 0.55rem 0.8rem;
-  font-size: 1.07rem;
+  font-size: 0.82rem;
   text-align: left;
   cursor: pointer;
   font-family: inherit;
@@ -512,7 +504,7 @@ main {
   margin-bottom: 0.7rem;
   padding: 0.6rem 0.8rem;
   border-radius: 3px;
-  font-size: 1.17rem;
+  font-size: 0.94rem;
   max-width: 85%;
   white-space: pre-wrap;
 }
@@ -540,7 +532,7 @@ main {
 
 .anbefalinger-etikett {
   width: 100%;
-  font-size: 1rem;
+  font-size: 0.8rem;
   color: var(--tekst-lys);
 }
 
@@ -551,7 +543,7 @@ main {
   color: #8A6D1E;
   padding: 0.45rem 0.8rem;
   font-family: inherit;
-  font-size: 1.05rem;
+  font-size: 0.84rem;
   text-align: left;
   cursor: pointer;
 }
@@ -573,7 +565,7 @@ main {
   border: 1px solid var(--kant);
   border-radius: 3px;
   font-family: inherit;
-  font-size: 1.24rem;
+  font-size: 0.99rem;
 }
 
 #sendKnapp {
@@ -583,7 +575,7 @@ main {
   border-radius: 3px;
   padding: 0.6rem 1.4rem;
   font-family: inherit;
-  font-size: 1.3rem;
+  font-size: 1.04rem;
   font-weight: 500;
   cursor: pointer;
 }
