@@ -674,12 +674,18 @@ function visAnbefalinger(meldingId, ider) {
   });
 
   melding.after(boks);
-  chatVindu.scrollTop = chatVindu.scrollHeight;
 }
 
+// Når svaret kommer: scroll til toppen av spørsmålet som ble stilt, slik at
+// brukeren leser svaret fra starten (og kan scrolle ned til anbefalingene)
 function oppdaterMelding(id, nyTekst) {
   const div = document.getElementById(id);
-  if (div) div.textContent = nyTekst;
-  chatVindu.scrollTop = chatVindu.scrollHeight;
+  if (!div) return;
+  div.textContent = nyTekst;
+
+  const sporsmal = div.previousElementSibling;
+  const start = sporsmal && sporsmal.classList.contains("melding-bruker") ? sporsmal : div;
+  const avstand = start.getBoundingClientRect().top - chatVindu.getBoundingClientRect().top;
+  chatVindu.scrollTop += avstand - parseFloat(getComputedStyle(chatVindu).paddingTop);
 }
 

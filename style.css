@@ -157,7 +157,7 @@ main {
   display: flex;
   flex-direction: column;
   min-height: 100vh;
-  background: var(--gronn-mork);
+  background: #000000;
 }
 
 .stadion {
@@ -201,12 +201,12 @@ main {
 }
 
 /* Chatten dekker 16-meteren: fra like under Ressurser-kisten (slutter på ca. 61 %)
-   og nesten ned til bunnen, og fra 17 % til 83 % av bildebredden */
+   og nesten ned til bunnen, og fra 13,7 % til 86,3 % av bildebredden */
 .chat-plassering {
   position: absolute;
   z-index: 1;
-  left: 17%;
-  right: 17%;
+  left: 13.7%;
+  right: 13.7%;
   top: 63%;
   bottom: 2%;
 }
@@ -239,7 +239,7 @@ main {
 /* Lave skjermer (f.eks. 1280×720): litt mindre tittel */
 @media (max-height: 820px) {
   .chat-plassering .chat-seksjon h2 {
-    font-size: 1.15rem;
+    font-size: 1.04rem;
   }
 }
 
@@ -435,7 +435,7 @@ main {
   font-family: 'Fraunces', serif;
   color: var(--gronn-mork);
   margin-top: 0;
-  font-size: 1.36rem;
+  font-size: 1.22rem;
 }
 
 .chat-topptekst {
@@ -456,7 +456,7 @@ main {
   border-radius: 3px;
   color: var(--tekst-lys);
   font-family: inherit;
-  font-size: 0.81rem;
+  font-size: 0.73rem;
   padding: 0.4rem 0.8rem;
   cursor: pointer;
 }
@@ -478,7 +478,7 @@ main {
   border: 1px solid var(--kant);
   border-radius: 3px;
   padding: 0.55rem 0.8rem;
-  font-size: 0.82rem;
+  font-size: 0.74rem;
   text-align: left;
   cursor: pointer;
   font-family: inherit;
@@ -504,7 +504,7 @@ main {
   margin-bottom: 0.7rem;
   padding: 0.6rem 0.8rem;
   border-radius: 3px;
-  font-size: 0.94rem;
+  font-size: 0.85rem;
   max-width: 85%;
   white-space: pre-wrap;
 }
@@ -532,7 +532,7 @@ main {
 
 .anbefalinger-etikett {
   width: 100%;
-  font-size: 0.8rem;
+  font-size: 0.72rem;
   color: var(--tekst-lys);
 }
 
@@ -543,7 +543,7 @@ main {
   color: #8A6D1E;
   padding: 0.45rem 0.8rem;
   font-family: inherit;
-  font-size: 0.84rem;
+  font-size: 0.76rem;
   text-align: left;
   cursor: pointer;
 }
@@ -565,7 +565,7 @@ main {
   border: 1px solid var(--kant);
   border-radius: 3px;
   font-family: inherit;
-  font-size: 0.99rem;
+  font-size: 0.89rem;
 }
 
 #sendKnapp {
@@ -575,7 +575,7 @@ main {
   border-radius: 3px;
   padding: 0.6rem 1.4rem;
   font-family: inherit;
-  font-size: 1.04rem;
+  font-size: 0.94rem;
   font-weight: 500;
   cursor: pointer;
 }
