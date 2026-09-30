@@ -60,13 +60,49 @@ const artikkelData = {
     tittel: "Day2Day",
     artikler: [
       {
-        id: "d2d-1",
-        tittel: "Eksempelartikkel: Daglig rutine",
-        temaer: ["Tema 1", "Tema 2", "Tema 3", "Tema 4"],
-        innhold: "Dette er en eksempelartikkel under Day2Day. Erstatt denne teksten med ditt eget innhold når du redigerer artikkelData i app.js.",
-        oversettelseLenke: "#",
-        sammendragLenke: "#",
-        originalLenke: "#"
+        id: "bru-09",
+        tittel: "Prestasjonsmessige og organisatoriske stressorer i junior-til-senior-overgangen i fotball (Rye et al., 2022)",
+        temaer: ["Prestasjonsstressorer", "Organisatoriske stressorer", "Dobbeltkarriere", "Norsk fotball"],
+        innhold: "En kvalitativ studie av ti norske juniorspillere som kartlegger hvilke konkurranse- og organisatoriske stressfaktorer de opplever i overgangen til seniorfotball, og hvilke tiltak klubber kan sette inn for å redusere dem.",
+        oversettelseLenke: "artikkel-filer/brufaser-09-oversettelse.pdf",
+        sammendragLenke: "artikkel-filer/brufaser-09-sammendrag.pdf",
+        originalLenke: "artikkel-filer/brufaser-09-original.pdf"
+      },
+      {
+        id: "bru-17",
+        tittel: "'Du blir slått ned, og du reiser deg opp igjen!' – Alan Tonges doktorgradsarbeid om kritiske øyeblikk i fotball (2021)",
+        temaer: ["Autoetnografi", "Kritiske øyeblikk (Critical moments)", "Idrettsidentitet", "Eksistensiell idrettspsykologi"],
+        innhold: "En dyptgående doktorgradsavhandling som gjennom selvbiografi, intervjuer og en spørreundersøkelse blant 85 tidligere proffspillere avdekker hvor lite støtte spillere opplever ved motgang og karriereslutt i fotball.",
+        oversettelseLenke: "artikkel-filer/brufaser-17-oversettelse.pdf",
+        sammendragLenke: "artikkel-filer/brufaser-17-sammendrag.pdf",
+        originalLenke: "https://researchonline.ljmu.ac.uk/id/eprint/16763/1/2021tongephd.pdf"
+      },
+      {
+        id: "bru-24",
+        tittel: "«Når du forstår miljøet, kan du navigere overgangen bedre»: Å støtte fotballspillere i overgang til utenlandske klubber",
+        temaer: ["Transisjonsmiljø (transition environment)", "Sportspsykologisk støtte", "Kulturell tilpasning", "Overgang til utenlandsk klubb"],
+        innhold: "Tre sportspsykologer ved University of Southern Denmark beskriver hvordan begrepet «transisjonsmiljø» kan brukes til å støtte fotballspillere som bytter klubb i utlandet — gjennom fasene før overgangen, akutt kulturell tilpasning og sosiokulturell tilpasning.",
+        originalLenke: "artikkel-filer/bru-24-original.pdf",
+        oversettelseLenke: "artikkel-filer/bru-24-oversettelse.pdf",
+        sammendragLenke: "artikkel-filer/bru-24-sammendrag.pdf"
+      },
+      {
+        id: "bru-27",
+        tittel: "Overgangsopplevelser og foreldrestøtte i et norsk profesjonelt fotballakademi",
+        temaer: ["Transisjon ungdom–senior", "Foreldrestøtte", "Overgang inn og ut av akademi", "Realistiske ambisjoner"],
+        innhold: "Norsk studie av fem tidligere juniorspillere i et profesjonelt fotballakademi og deres foreldre. Foreldrestøtte fremstår som en tveegget kniv: nødvendig og verdsatt av spillerne, men med risiko for å skape utilsiktet press. Overgangen ut av akademiet oppleves ofte som lettere enn ventet, fordi ambisjonene gradvis justeres ned.",
+        originalLenke: "artikkel-filer/bru-27-original.pdf",
+        oversettelseLenke: "artikkel-filer/bru-27-oversettelse.pdf",
+        sammendragLenke: "artikkel-filer/bru-27-sammendrag.pdf"
+      },
+      {
+        id: "bru-28",
+        tittel: "Arbeidet med kulturell overgang: en fremvoksende modell",
+        temaer: ["Kulturell overgang", "Transnasjonal idrettskarriere", "Sosial reposisjonering", "Mening og identitet i overgang"],
+        innhold: "Basert på livshistorie-intervjuer med 15 utøvere fra flere idretter presenterer Ryba, Stambulova og Ronkainen en modell for kulturell overgang i tre faser (før overgangen, akutt kulturell tilpasning, sosiokulturell tilpasning), drevet av tre mestringsmekanismer: sosial reposisjonering, forhandling av kulturell praksis og rekonstruksjon av mening.",
+        originalLenke: "artikkel-filer/bru-28-original.pdf",
+        oversettelseLenke: "artikkel-filer/bru-28-oversettelse.pdf",
+        sammendragLenke: "artikkel-filer/bru-28-sammendrag.pdf"
       }
     ]
   },
@@ -119,24 +155,6 @@ const artikkelData = {
         originalLenke: "artikkel-filer/brufaser-08-original.pdf"
       },
       {
-        id: "bru-09",
-        tittel: "Prestasjonsmessige og organisatoriske stressorer i junior-til-senior-overgangen i fotball (Rye et al., 2022)",
-        temaer: ["Prestasjonsstressorer", "Organisatoriske stressorer", "Dobbeltkarriere", "Norsk fotball"],
-        innhold: "En kvalitativ studie av ti norske juniorspillere som kartlegger hvilke konkurranse- og organisatoriske stressfaktorer de opplever i overgangen til seniorfotball, og hvilke tiltak klubber kan sette inn for å redusere dem.",
-        oversettelseLenke: "artikkel-filer/brufaser-09-oversettelse.pdf",
-        sammendragLenke: "artikkel-filer/brufaser-09-sammendrag.pdf",
-        originalLenke: "artikkel-filer/brufaser-09-original.pdf"
-      },
-      {
-        id: "bru-10",
-        tittel: "Sjokkerende mangel på spilletid for unge skotter avdekket i SFA-rapport",
-        temaer: ["Skotsk fotball (SFA)", "Spilletid for unge", "Den gylne alder (16-18)", "Spillerhandel"],
-        innhold: "En SFA-bestilt rapport avdekker at unge skotske talenter i svært liten grad får spilletid på seniornivå sammenlignet med resten av Europa, og foreslår mer fleksible utlånsordninger som løsning.",
-        oversettelseLenke: "artikkel-filer/brufaser-10-oversettelse.pdf",
-        sammendragLenke: "artikkel-filer/brufaser-10-sammendrag.pdf",
-        originalLenke: "https://www.heraldscotland.com/sport/24531309.shocking-lack-minutes-young-scots-laid-bare-report/"
-      },
-      {
         id: "bru-11",
         tittel: "Strategiske endringer i Aberdeen FC sin utviklingsvei for ungdom",
         temaer: ["Aberdeen FC", "Utviklingsvei", "Utlånsstrategi", "Overgangstrener"],
@@ -162,24 +180,6 @@ const artikkelData = {
         oversettelseLenke: "artikkel-filer/brufaser-14-oversettelse.pdf",
         sammendragLenke: "artikkel-filer/brufaser-14-sammendrag.pdf",
         originalLenke: "https://thefootballscholar.com/transition-from-academy-football-to-first-team/"
-      },
-      {
-        id: "bru-16",
-        tittel: "Ungdom-til-senior-overgangen i europeisk elitefotball (Carpels et al., 2021)",
-        temaer: ["Europeisk toppfotball", "Klubb-utviklede spillere (CTP)", "CIES-data", "Spilletidsstatistikk"],
-        innhold: "En stor statistisk analyse av 12 000 spillere i 31 europeiske ligaer, som dokumenterer at klubbutviklede spillere får stadig mindre spilletid – til tross for en påvist sammenheng mellom egenutvikling og sportslig suksess.",
-        oversettelseLenke: "artikkel-filer/brufaser-16-oversettelse.pdf",
-        sammendragLenke: "artikkel-filer/brufaser-16-sammendrag.pdf",
-        originalLenke: "https://eprints.gla.ac.uk/252908/2/252908.pdf"
-      },
-      {
-        id: "bru-17",
-        tittel: "'Du blir slått ned, og du reiser deg opp igjen!' – Alan Tonges doktorgradsarbeid om kritiske øyeblikk i fotball (2021)",
-        temaer: ["Autoetnografi", "Kritiske øyeblikk (Critical moments)", "Idrettsidentitet", "Eksistensiell idrettspsykologi"],
-        innhold: "En dyptgående doktorgradsavhandling som gjennom selvbiografi, intervjuer og en spørreundersøkelse blant 85 tidligere proffspillere avdekker hvor lite støtte spillere opplever ved motgang og karriereslutt i fotball.",
-        oversettelseLenke: "artikkel-filer/brufaser-17-oversettelse.pdf",
-        sammendragLenke: "artikkel-filer/brufaser-17-sammendrag.pdf",
-        originalLenke: "https://researchonline.ljmu.ac.uk/id/eprint/16763/1/2021tongephd.pdf"
       },
       {
         id: "bru-18",
@@ -209,15 +209,6 @@ const artikkelData = {
         sammendragLenke: "artikkel-filer/bru-20-sammendrag.pdf"
       },
       {
-        id: "bru-21",
-        tittel: "ECA-rapport: Transisjonen fra akademi til førstelagsfotball",
-        temaer: ["Transisjon ungdom–senior", "Beste praksis og benchmarking", "Transisjonscoaching", "Støttende utviklingsmiljø"],
-        innhold: "European Club Association (ECA) og Football Benchmark har kartlagt hvordan unge spillere i europeisk fotball håndterer overgangen fra akademi til seniornivå. Rapporten ser på hvilke ligaer og klubber som lykkes best med debutanter og overganger, og trekker frem trenerkvalitet og individuell transisjonscoaching som nøkkelfaktorer.",
-        originalLenke: "artikkel-filer/bru-21-original.pdf",
-        oversettelseLenke: "artikkel-filer/bru-21-oversettelse.pdf",
-        sammendragLenke: "artikkel-filer/bru-21-sammendrag.pdf"
-      },
-      {
         id: "bru-22",
         tittel: "Spilleres opplevelse av overgangen fra akademi til førstelag i profesjonell fotball (PhD-avhandling)",
         temaer: ["Transisjon ungdom–senior", "Spilletid og mulighet", "Kontrakter og maktdynamikk", "Organisatoriske prosesser"],
@@ -236,51 +227,6 @@ const artikkelData = {
         sammendragLenke: "artikkel-filer/bru-23-sammendrag.pdf"
       },
       {
-        id: "bru-24",
-        tittel: "«Når du forstår miljøet, kan du navigere overgangen bedre»: Å støtte fotballspillere i overgang til utenlandske klubber",
-        temaer: ["Transisjonsmiljø (transition environment)", "Sportspsykologisk støtte", "Kulturell tilpasning", "Overgang til utenlandsk klubb"],
-        innhold: "Tre sportspsykologer ved University of Southern Denmark beskriver hvordan begrepet «transisjonsmiljø» kan brukes til å støtte fotballspillere som bytter klubb i utlandet — gjennom fasene før overgangen, akutt kulturell tilpasning og sosiokulturell tilpasning.",
-        originalLenke: "artikkel-filer/bru-24-original.pdf",
-        oversettelseLenke: "artikkel-filer/bru-24-oversettelse.pdf",
-        sammendragLenke: "artikkel-filer/bru-24-sammendrag.pdf"
-      },
-      {
-        id: "bru-25",
-        tittel: "Vellykket talentutvikling i fotball: Kjennetegn ved miljøet (AGF-studien)",
-        temaer: ["Talentutviklingsmiljø (ATDE)", "Organisasjonskultur og familiefølelse", "Barrierer i overgangen til proff", "Helhetlig tilnærming til spillerutvikling"],
-        innhold: "Casestudie av U17-miljøet i en dansk fotballklubb (AGF) identifiserer fire kulturelle kjennetegn ved et vellykket talentutviklingsmiljø: sterk familiefølelse, vekt på arbeidskapasitet fremfor rått talent, fokus på spillerutdanning, og en helhetlig tilnærming. Studien peker samtidig på manglende kommunikasjon og struktur mellom ungdoms- og seniorapparatet som en sentral barriere i overgangen til proff.",
-        originalLenke: "https://doi.org/10.1037/a0031958",
-        oversettelseLenke: "artikkel-filer/bru-25-oversettelse.pdf",
-        sammendragLenke: "artikkel-filer/bru-25-sammendrag.pdf"
-      },
-      {
-        id: "bru-26",
-        tittel: "Ny nøkkel til talentutvikling",
-        temaer: ["Overgang junior–senior", "Mental helse og trivsel", "Talent-transfer mellom idretter", "Dobbel karriere (utdanning og idrett)"],
-        innhold: "Bokutdrag av Henriksen, Larsen og Storm om hvordan talentutvikling må ta mental helse og trivsel like alvorlig som prestasjoner. Tar for seg talent-transfer mellom idretter, fordelene ved dobbel karriere (idrett og utdanning), og hvorfor overgangen fra junior til senior er så kritisk og frafallsutsatt.",
-        originalLenke: "https://pov.international/ny-nogle-til-talentudvikling/",
-        oversettelseLenke: "artikkel-filer/bru-26-oversettelse.pdf",
-        sammendragLenke: "artikkel-filer/bru-26-sammendrag.pdf"
-      },
-      {
-        id: "bru-27",
-        tittel: "Overgangsopplevelser og foreldrestøtte i et norsk profesjonelt fotballakademi",
-        temaer: ["Transisjon ungdom–senior", "Foreldrestøtte", "Overgang inn og ut av akademi", "Realistiske ambisjoner"],
-        innhold: "Norsk studie av fem tidligere juniorspillere i et profesjonelt fotballakademi og deres foreldre. Foreldrestøtte fremstår som en tveegget kniv: nødvendig og verdsatt av spillerne, men med risiko for å skape utilsiktet press. Overgangen ut av akademiet oppleves ofte som lettere enn ventet, fordi ambisjonene gradvis justeres ned.",
-        originalLenke: "artikkel-filer/bru-27-original.pdf",
-        oversettelseLenke: "artikkel-filer/bru-27-oversettelse.pdf",
-        sammendragLenke: "artikkel-filer/bru-27-sammendrag.pdf"
-      },
-      {
-        id: "bru-28",
-        tittel: "Arbeidet med kulturell overgang: en fremvoksende modell",
-        temaer: ["Kulturell overgang", "Transnasjonal idrettskarriere", "Sosial reposisjonering", "Mening og identitet i overgang"],
-        innhold: "Basert på livshistorie-intervjuer med 15 utøvere fra flere idretter presenterer Ryba, Stambulova og Ronkainen en modell for kulturell overgang i tre faser (før overgangen, akutt kulturell tilpasning, sosiokulturell tilpasning), drevet av tre mestringsmekanismer: sosial reposisjonering, forhandling av kulturell praksis og rekonstruksjon av mening.",
-        originalLenke: "artikkel-filer/bru-28-original.pdf",
-        oversettelseLenke: "artikkel-filer/bru-28-oversettelse.pdf",
-        sammendragLenke: "artikkel-filer/bru-28-sammendrag.pdf"
-      },
-      {
         id: "bru-29",
         tittel: "Karriereutvikling og overganger hos idrettsutøvere: ISSPs posisjonsdokument revidert",
         temaer: ["Karriereutvikling i idrett", "Dobbel karriere (utdanning og idrett)", "Kulturell overgang og migrasjon", "Krisetransisjoner og psykisk helse"],
@@ -295,13 +241,40 @@ const artikkelData = {
     tittel: "Referanser",
     artikler: [
       {
-        id: "ref-1",
-        tittel: "Eksempelartikkel: Referansemateriale",
-        temaer: ["Tema 1", "Tema 2", "Tema 3", "Tema 4"],
-        innhold: "Dette er en eksempelartikkel under Referanser. Erstatt denne teksten med ditt eget innhold.",
-        oversettelseLenke: "#",
-        sammendragLenke: "#",
-        originalLenke: "#"
+        id: "bru-10",
+        tittel: "Sjokkerende mangel på spilletid for unge skotter avdekket i SFA-rapport",
+        temaer: ["Skotsk fotball (SFA)", "Spilletid for unge", "Den gylne alder (16-18)", "Spillerhandel"],
+        innhold: "En SFA-bestilt rapport avdekker at unge skotske talenter i svært liten grad får spilletid på seniornivå sammenlignet med resten av Europa, og foreslår mer fleksible utlånsordninger som løsning.",
+        oversettelseLenke: "artikkel-filer/brufaser-10-oversettelse.pdf",
+        sammendragLenke: "artikkel-filer/brufaser-10-sammendrag.pdf",
+        originalLenke: "https://www.heraldscotland.com/sport/24531309.shocking-lack-minutes-young-scots-laid-bare-report/"
+      },
+      {
+        id: "bru-16",
+        tittel: "Ungdom-til-senior-overgangen i europeisk elitefotball (Carpels et al., 2021)",
+        temaer: ["Europeisk toppfotball", "Klubb-utviklede spillere (CTP)", "CIES-data", "Spilletidsstatistikk"],
+        innhold: "En stor statistisk analyse av 12 000 spillere i 31 europeiske ligaer, som dokumenterer at klubbutviklede spillere får stadig mindre spilletid – til tross for en påvist sammenheng mellom egenutvikling og sportslig suksess.",
+        oversettelseLenke: "artikkel-filer/brufaser-16-oversettelse.pdf",
+        sammendragLenke: "artikkel-filer/brufaser-16-sammendrag.pdf",
+        originalLenke: "https://eprints.gla.ac.uk/252908/2/252908.pdf"
+      },
+      {
+        id: "bru-21",
+        tittel: "ECA-rapport: Transisjonen fra akademi til førstelagsfotball",
+        temaer: ["Transisjon ungdom–senior", "Beste praksis og benchmarking", "Transisjonscoaching", "Støttende utviklingsmiljø"],
+        innhold: "European Club Association (ECA) og Football Benchmark har kartlagt hvordan unge spillere i europeisk fotball håndterer overgangen fra akademi til seniornivå. Rapporten ser på hvilke ligaer og klubber som lykkes best med debutanter og overganger, og trekker frem trenerkvalitet og individuell transisjonscoaching som nøkkelfaktorer.",
+        originalLenke: "artikkel-filer/bru-21-original.pdf",
+        oversettelseLenke: "artikkel-filer/bru-21-oversettelse.pdf",
+        sammendragLenke: "artikkel-filer/bru-21-sammendrag.pdf"
+      },
+      {
+        id: "bru-25",
+        tittel: "Vellykket talentutvikling i fotball: Kjennetegn ved miljøet (AGF-studien)",
+        temaer: ["Talentutviklingsmiljø (ATDE)", "Organisasjonskultur og familiefølelse", "Barrierer i overgangen til proff", "Helhetlig tilnærming til spillerutvikling"],
+        innhold: "Casestudie av U17-miljøet i en dansk fotballklubb (AGF) identifiserer fire kulturelle kjennetegn ved et vellykket talentutviklingsmiljø: sterk familiefølelse, vekt på arbeidskapasitet fremfor rått talent, fokus på spillerutdanning, og en helhetlig tilnærming. Studien peker samtidig på manglende kommunikasjon og struktur mellom ungdoms- og seniorapparatet som en sentral barriere i overgangen til proff.",
+        originalLenke: "https://doi.org/10.1037/a0031958",
+        oversettelseLenke: "artikkel-filer/bru-25-oversettelse.pdf",
+        sammendragLenke: "artikkel-filer/bru-25-sammendrag.pdf"
       }
     ]
   },
@@ -316,6 +289,15 @@ const artikkelData = {
         originalLenke: "https://www.teamdanmark.dk/presse/nyheder/2022/marts/unge-talenter-er-ikke-smaa-eliteatleter",
         oversettelseLenke: "artikkel-filer/lae-01-oversettelse.pdf",
         sammendragLenke: "artikkel-filer/lae-01-sammendrag.pdf"
+      },
+      {
+        id: "bru-26",
+        tittel: "Ny nøkkel til talentutvikling",
+        temaer: ["Overgang junior–senior", "Mental helse og trivsel", "Talent-transfer mellom idretter", "Dobbel karriere (utdanning og idrett)"],
+        innhold: "Bokutdrag av Henriksen, Larsen og Storm om hvordan talentutvikling må ta mental helse og trivsel like alvorlig som prestasjoner. Tar for seg talent-transfer mellom idretter, fordelene ved dobbel karriere (idrett og utdanning), og hvorfor overgangen fra junior til senior er så kritisk og frafallsutsatt.",
+        originalLenke: "https://pov.international/ny-nogle-til-talentudvikling/",
+        oversettelseLenke: "artikkel-filer/bru-26-oversettelse.pdf",
+        sammendragLenke: "artikkel-filer/bru-26-sammendrag.pdf"
       }
     ]
   }
