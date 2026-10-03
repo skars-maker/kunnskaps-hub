@@ -227,6 +227,15 @@ const artikkelData = {
         sammendragLenke: "artikkel-filer/bru-23-sammendrag.pdf"
       },
       {
+        id: "bru-26",
+        tittel: "Ny nøkkel til talentutvikling",
+        temaer: ["Overgang junior–senior", "Mental helse og trivsel", "Talent-transfer mellom idretter", "Dobbel karriere (utdanning og idrett)"],
+        innhold: "Bokutdrag av Henriksen, Larsen og Storm om hvordan talentutvikling må ta mental helse og trivsel like alvorlig som prestasjoner. Tar for seg talent-transfer mellom idretter, fordelene ved dobbel karriere (idrett og utdanning), og hvorfor overgangen fra junior til senior er så kritisk og frafallsutsatt.",
+        originalLenke: "https://pov.international/ny-nogle-til-talentudvikling/",
+        oversettelseLenke: "artikkel-filer/bru-26-oversettelse.pdf",
+        sammendragLenke: "artikkel-filer/bru-26-sammendrag.pdf"
+      },
+      {
         id: "bru-29",
         tittel: "Karriereutvikling og overganger hos idrettsutøvere: ISSPs posisjonsdokument revidert",
         temaer: ["Karriereutvikling i idrett", "Dobbel karriere (utdanning og idrett)", "Kulturell overgang og migrasjon", "Krisetransisjoner og psykisk helse"],
@@ -289,15 +298,6 @@ const artikkelData = {
         originalLenke: "https://www.teamdanmark.dk/presse/nyheder/2022/marts/unge-talenter-er-ikke-smaa-eliteatleter",
         oversettelseLenke: "artikkel-filer/lae-01-oversettelse.pdf",
         sammendragLenke: "artikkel-filer/lae-01-sammendrag.pdf"
-      },
-      {
-        id: "bru-26",
-        tittel: "Ny nøkkel til talentutvikling",
-        temaer: ["Overgang junior–senior", "Mental helse og trivsel", "Talent-transfer mellom idretter", "Dobbel karriere (utdanning og idrett)"],
-        innhold: "Bokutdrag av Henriksen, Larsen og Storm om hvordan talentutvikling må ta mental helse og trivsel like alvorlig som prestasjoner. Tar for seg talent-transfer mellom idretter, fordelene ved dobbel karriere (idrett og utdanning), og hvorfor overgangen fra junior til senior er så kritisk og frafallsutsatt.",
-        originalLenke: "https://pov.international/ny-nogle-til-talentudvikling/",
-        oversettelseLenke: "artikkel-filer/bru-26-oversettelse.pdf",
-        sammendragLenke: "artikkel-filer/bru-26-sammendrag.pdf"
       }
     ]
   }
